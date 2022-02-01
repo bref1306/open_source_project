@@ -13,6 +13,7 @@
         <p>Télécharger vos deux photos pour les fusionner en une !</p>
     </div>
     <form action="upload/upload.php" method="post" class="m-10" enctype="multipart/form-data">
+
         <div class="flex flex-col justify-center space-y-10">
             <div class="flex flex-row justify-center space-x-4">
                 <div class="flex flex-col">
