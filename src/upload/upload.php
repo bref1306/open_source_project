@@ -1,10 +1,10 @@
 
 <h2>Formulaire de test réception fichier local</h2>
-<form method="post" action="" enctype='multipart/form-data'>
+<!-- <form method="post" action="" enctype='multipart/form-data'>
     <input type="file" name="file1">
     <input type="file" name="file2">
     <button type="submit">valider</button>
-</form>
+</form> -->
 
 
 <form method="post" action="">
@@ -21,7 +21,7 @@ $extension=['jpeg','png','jpg'];
 $files=array();
 
 $message=null;
-if(isset($_FILES['file1']) /*&& isset($_FILE['file2'])*/){
+if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     $files[] = $_FILES['file1'];
     $files[]=  $_FILES['file2'];
 

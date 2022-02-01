@@ -12,7 +12,7 @@
         <h1>Photoshop Low Cost</h1>
         <p>Télécharger vos deux photos pour les fusionner en une !</p>
     </div>
-    <form action="upload/upload.php" class="m-10">
+    <form action="upload/upload.php" method="POST" enctype="multipart/form-data" class="m-10">
         <div class="flex flex-col justify-center space-y-10">
             <div class="flex flex-row justify-center space-x-4">
                 <div class="flex flex-col">
