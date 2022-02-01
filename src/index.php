@@ -16,8 +16,8 @@
         <div class="flex flex-col justify-center space-y-10">
             <div class="flex flex-row justify-center space-x-4">
                 <div class="flex flex-col">
-                    <label for="file">Upload votre 1ère image</label>
-                    <input name="file" type="file">
+                    <label for="file1">Upload votre 1ère image</label>
+                    <input name="file1" type="file">
                 </div>
                 <div class="flex flex-col">
                     <label for="file2">Upload votre 2e image</label>
