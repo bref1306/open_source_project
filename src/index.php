@@ -12,10 +12,6 @@
             <label for="file">Upload votre 1ère image</label><br>
             <input name="file" type="file">
         </div>
-        <button type="submit">Confirmer</button>
-    </form>
-
-    <form action="">
         <div>
             <label for="file2">Upload votre 2e image</label><br>
             <input name="file2" type="file">
