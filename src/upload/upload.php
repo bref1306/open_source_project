@@ -1,12 +1,4 @@
 
-<h2>Formulaire de test réception fichier local</h2>
-<form method="post" action="" enctype='multipart/form-data'>
-    <input type="file" name="file1">
-    <input type="file" name="file2">
-    <button type="submit">valider</button>
-</form>
-
-
 <form method="post" action="">
     <h3>choisir position pour la deuxième image</h3>
     <label style="display: inline-block; width: 100px">horizontale : </label>
@@ -17,18 +9,20 @@
 </form>
 <?php
 
+
 $extension=['jpeg','png','jpg'];
 $files=array();
 
 $message=null;
-if(isset($_FILES['file1']) /*&& isset($_FILE['file2'])*/){
+if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     $files[] = $_FILES['file1'];
     $files[]=  $_FILES['file2'];
 
     for($i=0;$i<sizeof($files);$i++){
        $type=explode('/',$files[$i]['type']);
         if(!in_array($type[1],$extension)){
-            header('Location:../index.php');
+            $message=$files[$i]['name']." non pris en charge";
+            header('Location:../index.php?message='.$message.'');
             exit;
         }
     }
