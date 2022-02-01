@@ -7,7 +7,7 @@
     <title>Fusion d'images</title>
 </head>
 <body>
-    <form action="">
+    <form action="upload/upload.php">
         <div>
             <label for="file">Upload votre 1ère image</label><br>
             <input name="file" type="file">
