@@ -28,6 +28,17 @@
             <button type="submit">Confirmer</button>
         </div>
     </form>
-    <?php echo $_GET['message']; ?>
+    <?php
+    if(isset($_GET['message'])){
+        switch ($_GET['message']){
+            case $_GET['message']=="fileMissing":
+                echo "tous les fichier sont obligatoires";
+                break;
+            default :
+                echo $_GET['message'] ." non pris en charge";
+        }
+    }
+
+    ?>
 </body>
 </html>
