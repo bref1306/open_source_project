@@ -52,8 +52,6 @@ $hauteur_image1 = imagesy($image1);
 $destination_x = $largeur_image1 - 200;//position pour placer la deuxième image en x
 $destination_y = $hauteur_image1 - 200;//position pour placer la deuxième image en y
 
-echo $largeur_image1 . " ".$hauteur_image1;
-
 imagecopymerge($image1, $image2, $destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
 
 
