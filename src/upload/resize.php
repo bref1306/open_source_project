@@ -1,3 +1,12 @@
+<form method="post" action="">
+    <h3>choisir position pour la deuxième image</h3>
+    <label style="display: inline-block; width: 100px">horizontale : </label>
+    <input placeholder="exemple : 100.3" name="posX" style="margin-left: 20px"><br>
+    <label style="display: inline-block;width: 100px">verticale :  </label>
+    <input placeholder="exemple : 100.3" name="posY" style="margin-left: 20px">
+    <button type="submit">Valider</button>
+</form>
+
 <?php
 
 $files=scandir('image/');
