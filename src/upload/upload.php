@@ -36,9 +36,21 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
             move_uploaded_file($tmpName,'image/fichier'.($i+1).'.'.$fileExtension[0].'');
         }
     }
+
+    /*redirect to resize image url*/
+    if(file_exists('image/fichier1.'.$fileExtension[0].'') && file_exists('image/fichier2.'.$fileExtension[0].'')){
+        header('Location: resize.php');
+        exit;
+    }
+    else{
+         echo "<h1>Erreur de fichier</h1>";
+    }
 }
 else{
     $message="fileMissing";
     header('Location:../index.php?message='.$message.'');
+    exit;
 }
+
+
 
