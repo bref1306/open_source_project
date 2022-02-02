@@ -9,7 +9,7 @@
 
     <!-- Scripts CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="style.css"></script>
+    <link rel="stylesheet" href="style.css">
 
     <!-- Srripts JS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
