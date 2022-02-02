@@ -1,15 +1,4 @@
 
-<<<<<<< HEAD
-=======
-<h2>Formulaire de test réception fichier local</h2>
-<!-- <form method="post" action="" enctype='multipart/form-data'>
-    <input type="file" name="file1">
-    <input type="file" name="file2">
-    <button type="submit">valider</button>
-</form> -->
-
-
->>>>>>> b7293e0c72277f115fa8be71428d4c70b0ea808b
 <form method="post" action="">
     <h3>choisir position pour la deuxième image</h3>
     <label style="display: inline-block; width: 100px">horizontale : </label>
