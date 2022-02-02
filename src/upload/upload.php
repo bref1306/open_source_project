@@ -22,8 +22,8 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
        $type=explode('/',$files[$i]['type']);
         if(!in_array($type[1],$extension)){
             $message=$files[$i]['name'];
-            // header('Location:../index.php?message='.$message.'');
-            // exit;
+            header('Location:../index.php?message='.$message.'');
+            exit;
         }
     }
 }
