@@ -25,59 +25,23 @@
         <div class="flex flex-col justify-center space-y-10">
             <div class="flex flex-row justify-center space-x-4">
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
-                        <!-- Photo File Input -->
-                        <input type="file" class="hidden" x-ref="photo" x-on:change="
-                                            photoName = $refs.photo.files[0].name;
-                                            const reader = new FileReader();
-                                            reader.onload = (e) => {
-                                                photoPreview = e.target.result;
-                                            };
-                                            reader.readAsDataURL($refs.photo.files[0]);
-                        ">
-                        <div class="mt-2" x-show="! photoPreview">
-                            <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
-                        </div>
-                        <div class="mt-2" x-show="photoPreview" style="display: none;">
-                            <span class="block w-40 h-40 rounded-full m-auto shadow" x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
-                            </span>
-                        </div>
                         <div class="flex flex-col">
                             <label for="file1">Upload votre 1ère image</label>
-                            <button class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
+                            <button type="button" class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
                                 <p>Télécharger</p>
                                 <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t" name="file1" type="file">
                             </button>
                         </div>
-                    </div>
                 </div>
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
-                        <!-- Photo File Input -->
-                        <input type="file" class="hidden" x-ref="photo" x-on:change="
-                                            photoName = $refs.photo.files[0].name;
-                                            const reader = new FileReader();
-                                            reader.onload = (e) => {
-                                                photoPreview = e.target.result;
-                                            };
-                                            reader.readAsDataURL($refs.photo.files[0]);
-                        ">
-                        <div class="mt-2" x-show="! photoPreview">
-                            <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
-                        </div>
-                        <div class="mt-2" x-show="photoPreview" style="display: none;">
-                            <span class="block w-40 h-40 rounded-full m-auto shadow" x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
-                            </span>
-                        </div>
-                        <div class="flex flex-col">
-                            <label for="file2">Upload votre 2e image</label>
-                            <button class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
-                                <?php echo $upload_svg ?>
-                                <p>Télécharger</p>
-                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t" name="file2" type="file">
-                            </button>
-                        </div>
+                    <div class="flex flex-col">
+                        <label for="file2">Upload votre 2e image</label>
+                        <button type="button" class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
+                            <?php echo $upload_svg ?>
+                            <p>Télécharger</p>
+                            <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t" name="file2" type="file">
+                        </button>
                     </div>
                 </div>
             </div>
