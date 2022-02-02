@@ -1,6 +1,5 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-
 <form method="post" action="">
     <h3>choisir position pour la deuxième image</h3>
     <label style="display: inline-block; width: 100px">horizontale : </label>
@@ -10,7 +9,6 @@
     <button type="submit">Valider</button>
 </form>
 <?php
-
 
 $extensionAllowed=['jpeg','png','jpg'];
 $fileExtension=array();
