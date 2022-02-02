@@ -27,13 +27,13 @@
                 <div class="flex flex-col">
                     <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
-                        <input type="file" name="file1" class="hidden" x-ref="photo" x-on:change="
-                                            photoName = $refs.photo.files[0].name;
-                                            const reader = new FileReader();
-                                            reader.onload = (e) => {
-                                                photoPreview = e.target.result;
-                                            };
-                                            reader.readAsDataURL($refs.photo.files[0]);
+                        <input type="file" class="hidden" x-ref="photo" x-on:change="
+                            photoName = $refs.photo.files[0].name;
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                photoPreview = e.target.result;
+                            };
+                            reader.readAsDataURL($refs.photo.files[0]);
                         ">
                         <div class="mt-2" x-show="! photoPreview">
                             <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
@@ -53,15 +53,15 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
-                        <input type="file" name="file2" class="hidden" x-ref="photo" x-on:change="
-                                            photoName = $refs.photo.files[0].name;
-                                            const reader = new FileReader();
-                                            reader.onload = (e) => {
-                                                photoPreview = e.target.result;
-                                            };
-                                            reader.readAsDataURL($refs.photo.files[0]);
+                        <input type="file" class="hidden" x-ref="photo" x-on:change="
+                            photoName = $refs.photo.files[0].name;
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                photoPreview = e.target.result;
+                            };
+                            reader.readAsDataURL($refs.photo.files[0]);
                         ">
                         <div class="mt-2" x-show="! photoPreview">
                             <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
@@ -71,7 +71,7 @@
                             </span>
                         </div>
                         <div class="flex flex-col">
-                            <label for="file2">Upload votre 1ère image</label>
+                            <label for="file2">Upload votre 2e image</label>
                             <button class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
                                 <p>Télécharger</p>
