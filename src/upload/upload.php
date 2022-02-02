@@ -21,7 +21,7 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     $files[] = $_FILES['file1'];
     $files[]=  $_FILES['file2'];
 
-    for($i=0;$i<sizeof($files);$i++){
+    for($i=0; $i<sizeof($files) ;$i++){
        $type=explode('/',$files[$i]['type']);
        $fileExtension[]=$type[1];
 
