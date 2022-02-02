@@ -69,7 +69,19 @@
     function getPosX(){
         let posX=document.getElementById("largeur");
         let posY=document.getElementById("hauteur");
-        img.style="position: absolute; top:"+posX.value+"px; left:"+posY.value+"px";
+
+        if(posX.value!="" && posY.value !="" && (posX.value >=0 && posY.value>=0) ){
+            if(posX.value==""){
+                posX.value=0;
+            }
+            if(posY==""){
+                posY.value=0;
+            }
+            else{
+                img.style="position: absolute; top:"+posX.value+"px; left:"+posY.value+"px";
+            }
+        }
+
     }
 </script>
 
