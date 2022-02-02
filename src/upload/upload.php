@@ -1,15 +1,5 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<?php 
-
-include '../vendor/gumlet/php-image-resize/lib/ImageResize.php'; 
-$image = new \Gumlet\ImageResize('fichier1.png');
-$image->scale(50);
-$image->save('image2.jpg');
-var_dump($image);
-
-?>
-
 <form method="post" action="">
     <h3>choisir position pour la deuxième image</h3>
     <label style="display: inline-block; width: 100px">horizontale : </label>
