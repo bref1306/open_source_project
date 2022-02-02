@@ -1,3 +1,5 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
 
 <form method="post" action="">
     <h3>choisir position pour la deuxième image</h3>
@@ -9,7 +11,6 @@
 </form>
 <?php
 
-var_dump($_FILES);
 $extension=['jpeg','png','jpg'];
 $files=array();
 
