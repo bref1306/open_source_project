@@ -28,12 +28,12 @@
                     <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input type="file" class="hidden" x-ref="photo" x-on:change="
-                            photoName = $refs.photo.files[0].name;
-                            const reader = new FileReader();
-                            reader.onload = (e) => {
-                                photoPreview = e.target.result;
-                            };
-                            reader.readAsDataURL($refs.photo.files[0]);
+                                            photoName = $refs.photo.files[0].name;
+                                            const reader = new FileReader();
+                                            reader.onload = (e) => {
+                                                photoPreview = e.target.result;
+                                            };
+                                            reader.readAsDataURL($refs.photo.files[0]);
                         ">
                         <div class="mt-2" x-show="! photoPreview">
                             <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
@@ -53,15 +53,15 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="flex col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input type="file" class="hidden" x-ref="photo" x-on:change="
-                            photoName = $refs.photo.files[0].name;
-                            const reader = new FileReader();
-                            reader.onload = (e) => {
-                                photoPreview = e.target.result;
-                            };
-                            reader.readAsDataURL($refs.photo.files[0]);
+                                            photoName = $refs.photo.files[0].name;
+                                            const reader = new FileReader();
+                                            reader.onload = (e) => {
+                                                photoPreview = e.target.result;
+                                            };
+                                            reader.readAsDataURL($refs.photo.files[0]);
                         ">
                         <div class="mt-2" x-show="! photoPreview">
                             <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
