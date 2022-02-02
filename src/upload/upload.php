@@ -17,7 +17,6 @@ $fileExtension=array();
 $files=array();
 $message=null;
 
-var_dump($_FILES);
 if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     $files[] = $_FILES['file1'];
     $files[]=  $_FILES['file2'];
