@@ -23,7 +23,7 @@
 <div  style="float: left;">
     <div style="position: relative;border: 1px solid red;width: 500px" id="apercu">
         <img src="image/fichier1" id="img1"style="width: 100%">
-        <img src="copy" id="img2" style="width: 50px">
+        <img src="image/copy" id="img2" style="width: 50px">
     </div>
     <button id="sauvegarder" style="margin-top: 100px">Télécharger</button>
     <div id="messageResponse">
