@@ -6,7 +6,7 @@ Notre mode de gouvernance est de type communautaire. C'est notre communauté qui
 
 ## Rôles
 Les principaux mainteneurs de ce projet sont :
-Luc, Damien, Auriane et Badis.
+Luc LE COUTOUR, Damien IHAURADO, Auriane GEAI-SERIE et Badis.
 
 Le committer est Luc.
 ## Installation
