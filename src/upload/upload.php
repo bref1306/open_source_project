@@ -9,23 +9,35 @@
 </form>
 <?php
 
-var_dump($_FILES);
-$extension=['jpeg','png','jpg'];
+$extensionAllowed=['jpeg','png','jpg'];
+$fileExtension=array();
 $files=array();
-
 $message=null;
+
+var_dump($_FILES);
 if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     $files[] = $_FILES['file1'];
     $files[]=  $_FILES['file2'];
 
     for($i=0;$i<sizeof($files);$i++){
        $type=explode('/',$files[$i]['type']);
-        if(!in_array($type[1],$extension)){
+       $fileExtension[]=$type[1];
+
+        if(!in_array($fileExtension[$i],$extensionAllowed)){
             $message=$files[$i]['name'];
             header('Location:../index.php?message='.$message.'');
             exit;
         }
+        else{
+            /*  Move tempory files  */
+            $tmpName=$files[$i]['tmp_name'];
+            echo $tmpName;
+            move_uploaded_file($tmpName[$i],"/image/fichier($i+1).'.'.$fileExtension[0].'");
+        }
     }
+
+
+
 }
 else{
     $message="fileMissing";
