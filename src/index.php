@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +17,16 @@
    
 </head>
 <body class="m-0 p-0 w-full h-full">
-    <div class="p-4 text-center space-y-10">
+    <div class="p-4 text-center space-y-10 text-2xl">
         <h1>Photoshop Low Cost</h1>
         <p>Télécharger vos deux photos pour les fusionner en une !</p>
     </div>
     <?php $upload_svg = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>'; ?>
     <form action="upload/upload.php" method="post" class="m-10" enctype="multipart/form-data">
         <div class="flex flex-col justify-center space-y-10">
-            <div class="flex flex-row justify-center space-x-4">
+            <div class="flex flex-row justify-center space-x-24">
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input  name="file1" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
@@ -43,17 +44,16 @@
                             </span>
                         </div>
                         <div class="flex flex-col">
-                            <label for="file1">Upload votre 1ère image</label>
-                            <button type="button" class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
+                            <button type="button" class="w-30 flex flex-col items-center p-4 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-red-800" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
                                 <p>Télécharger</p>
-                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t">
+                                <input class="cursor-pointer absolute block py-2 px-4 w-min opacity-0 pin-r pin-t">
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input name="file2" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
@@ -71,11 +71,10 @@
                             </span>
                         </div>
                         <div class="flex flex-col">
-                            <label for="file2">Upload votre 2e image</label>
-                            <button type="button" class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
+                            <button type="button" class="w-30 flex flex-col items-center p-4 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-red-800" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
                                 <p>Télécharger</p>
-                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t">
+                                <input class="cursor-pointer absolute block py-2 px-4 w-min opacity-0 pin-r pin-t">
                             </button>
                         </div>
                     </div>
