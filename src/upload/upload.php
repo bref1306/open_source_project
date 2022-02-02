@@ -33,7 +33,7 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
         else{
             /*  Move tempory files to image folder  */
             $tmpName=$files[$i]['tmp_name'];
-            move_uploaded_file($tmpName,'image/fichier'.($i+1).'.'.$fileExtension[0].'');
+            move_uploaded_file($tmpName,'image/fichier'.($i+1).'.'.$fileExtension[$i].'');
         }
     }
 
