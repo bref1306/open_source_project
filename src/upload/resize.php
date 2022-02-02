@@ -23,7 +23,7 @@
 <div  style="float: left;">
     <div style="position: relative;border: 1px solid red;width: 500px" id="apercu">
         <img src="image/fichier1" id="img1"style="width: 100%">
-        <img src="image/copy" id="img2" style="width: 50px">
+        <img src="image/copy" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
     </div>
     <button id="sauvegarder" style="margin-top: 100px">Télécharger</button>
     <div id="messageResponse">
@@ -64,7 +64,8 @@
     let img=document.getElementById("img2");
 
     //default image position
-    img.style="position: absolute;top:0; left:0";
+    //img.style+="position: absolute;top:0; left:0";
+
 
     function getPosX(){
         let posX=document.getElementById("largeur");
@@ -74,11 +75,13 @@
             if(posX.value==""){
                 posX.value=0;
             }
-            if(posY==""){
+            if(posY.value==""){
                 posY.value=0;
             }
             else{
-                img.style="position: absolute; top:"+posX.value+"px; left:"+posY.value+"px";
+                //img.style+="position: absolute; top:"+posX.value+"px; left:"+posY.value+"px";
+                jQuery("#img2").css("top",posX.value);
+                jQuery("#img2").css("left",posY.value);
             }
         }
 
