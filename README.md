@@ -20,7 +20,7 @@ php composer.phar update
 ````
 
 ## License 
-Librairie est sous MIT licence.
+Librairie sous MIT licence.
 
 
 
