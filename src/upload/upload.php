@@ -32,15 +32,11 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
             exit;
         }
         else{
-            /*  Move tempory files  */
+            /*  Move tempory files to image folder  */
             $tmpName=$files[$i]['tmp_name'];
-            echo $tmpName;
-            move_uploaded_file($tmpName[$i],"/image/fichier($i+1).'.'.$fileExtension[0].'");
+            move_uploaded_file($tmpName,'image/fichier'.($i+1).'.'.$fileExtension[0].'');
         }
     }
-
-
-
 }
 else{
     $message="fileMissing";
