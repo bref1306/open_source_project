@@ -27,7 +27,7 @@
                 <div class="flex flex-col">
                     <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
-                        <input type="file" class="hidden" x-ref="photo" x-on:change="
+                        <input  name="file1" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
                             const reader = new FileReader();
                             reader.onload = (e) => {
@@ -47,7 +47,7 @@
                             <button type="button" class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
                                 <p>Télécharger</p>
-                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t" name="file1" type="file">
+                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t">
                             </button>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <div class="flex flex-col">
                     <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
-                        <input type="file" class="hidden" x-ref="photo" x-on:change="
+                        <input name="file2" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
                             const reader = new FileReader();
                             reader.onload = (e) => {
@@ -75,12 +75,13 @@
                             <button type="button" class="cursor bg-violet-600 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min inline-flex items-center space-x-2" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
                                 <p>Télécharger</p>
-                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t" name="file2" type="file">
+                                <input class="cursor-pointer absolute block py-2 px-4 w-full opacity-0 pin-r pin-t">
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="error-msg text-center text-red-700">
                 <?php
                 if(isset($_GET['message'])){
