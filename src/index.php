@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
    
 </head>
-<body class="m-0 p-0 w-full h-full">
+<body class="m-0 p-0 w-full h-full bg-stone-200">
     <div class="p-4 text-center space-y-10 text-2xl">
         <h1>Photoshop Low Cost</h1>
         <p>Télécharger vos deux photos pour les fusionner en une !</p>
