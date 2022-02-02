@@ -49,11 +49,12 @@ $hauteur_image1 = imagesy($image1);
 
 /*ATTENTION il faudra remplacer le 100 et 200 par les positions choisi par l'utilisateur*/
 
-$destination_x = $largeur_image1 - 100;//position pour placer la deuxième image en x
+$destination_x = $largeur_image1 - 200;//position pour placer la deuxième image en x
 $destination_y = $hauteur_image1 - 200;//position pour placer la deuxième image en y
-
 
 imagecopymerge($image1, $image2, $destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
 
 
 imagejpeg($image1, "copyFinal.jpeg", 100);
+
+echo "<img src='copyFinal.jpeg' style='width=100%'>";
