@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * 
+ * 
+ */
 class Fusion {
     public $extensionAllowed =['jpeg','png','jpg'];
     public $pathImage;
@@ -46,7 +49,9 @@ class Fusion {
             return true;
         } else echo "<h1>Erreur de fichier</h1>";
     }
-
+    /**
+     * 
+     */
     public function resizeImages(){
         $files=scandir('image/');
         $fileToResize=null;

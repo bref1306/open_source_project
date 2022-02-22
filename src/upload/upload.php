@@ -15,6 +15,12 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
             unlink(__DIR__."/image/".$file);
         }
     }
+
+    //redirect to resize image url if  fichier1 and fichier2 exist
+    if(file_exists('image/fichier1.'.$fileExtension[0].'') && file_exists('image/fichier2.'.$fileExtension[1].'')){
+        header('Location: resize.html');
+        exit;
+    }
     $fusion = new Fusion($_FILES['file1'], $_FILES['file2'], "src/upload/image/");
     $m = $fusion->uploadFiles();
     if ($m != true) header('Location:../index.php?message='.$m.'');
