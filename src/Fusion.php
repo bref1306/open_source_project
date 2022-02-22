@@ -20,14 +20,14 @@ class Fusion {
      * @param file $file2 Second file uploaded
      */
     public function uploadFiles(){
-        if(empty($this->$file1) || empty($this->$file2)) {
+        if(empty($this->file1) || empty($this->file2)) {
             $message="fileMissing";
             // header('Location:../index.php?message='.$message.'');
             // exit;
             return $message;
         }
-        $files[] = $this->$file1;
-        $files[]=  $this->$file2;
+        $files[] = $this->file1;
+        $files[]=  $this->file2;
 
         for($i=0; $i<sizeof($files) ;$i++){
             $type=explode('/',$files[$i]['type']);
@@ -75,7 +75,7 @@ class Fusion {
             break;
         
             default :
-                $source = imagecreatefromjpg($fileToResize);
+                $source = imagecreatefromjpeg($fileToResize);
         }
         
         list($width, $height) = getimagesize($fileToResize);
