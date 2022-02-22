@@ -8,6 +8,13 @@ $files=array();
 $message=null;
 
 if(isset($_FILES['file1']) && isset($_FILES['file2'])){
+    /*remove all files before creating*/
+    $directory = scandir(__DIR__.'/image/');
+    foreach ($directory as $file){
+        if($file!="." && $file!=".."){
+            unlink(__DIR__."/image/".$file);
+        }
+    }
     $fusion = new Fusion($_FILES['file1'], $_FILES['file2'], "src/upload/image/");
     $m = $fusion->uploadFiles();
     if ($m != true) header('Location:../index.php?message='.$m.'');
