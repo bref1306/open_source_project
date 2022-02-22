@@ -2,12 +2,12 @@
 <?php
 include "../Fusion.php";
 
-$extensionAllowed=['jpeg','png','jpg'];
-$fileExtension=array();
-$files=array();
 $message=null;
-
-if(isset($_FILES['file1']) && isset($_FILES['file2'])){
+// conditionnal, execution save new image
+if(!empty($_POST["widthPrimary"])) {
+    $fusion = new Fusion(null, null, "image/");
+    $m = $fusion->uploadFiles($_POST);
+} else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     /*remove all files before creating*/
     $directory = scandir(__DIR__.'/image/');
     foreach ($directory as $file){
@@ -24,6 +24,3 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     header('Location:../index.php?message='.$message.'');
     exit;
 }
-
-
-
