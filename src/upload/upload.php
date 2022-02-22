@@ -18,7 +18,7 @@ if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     $fusion = new Fusion($_FILES['file1'], $_FILES['file2'], "image/");
     $m = $fusion->uploadFiles();
     if ($m != true) header('Location:../index.php?message='.$m.'');
-    else header('Location: resize.html');
+    else header('Location: resize.php');
 } else{
     $message="fileMissing";
     header('Location:../index.php?message='.$message.'');
