@@ -50,9 +50,9 @@ class Fusion {
         } else return "Erreur de fichier</h1>";
     }
     /**
-     * 
+     * @param array $param Datas send by post method
      */
-    public function resizeImages(){
+    public function resizeImages(array $param){
         $files=scandir('image/');
         $fileToResize=null;
         $fileExtension = null;
