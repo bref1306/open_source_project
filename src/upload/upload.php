@@ -4,9 +4,11 @@ include "../Fusion.php";
 
 $message=null;
 // conditionnal, execution save new image
-if(!empty($_POST["widthPrimary"])) {
+
+if(isset($_POST["widthPrimary"])) {
+    var_dump($_POST["widthPrimary"]);
     $fusion = new Fusion(null, null, "image/");
-    $m = $fusion->uploadFiles($_POST);
+    $m = $fusion->resizeImages($_POST);
 } else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     /*remove all files before creating*/
     $directory = scandir(__DIR__.'/image/');
