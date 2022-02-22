@@ -1,4 +1,4 @@
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Redimensioner mon image</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
 <div style="float: left;width: 400px">
@@ -33,8 +33,8 @@
 
 <div  style="float: left;">
     <div style="position: relative;border: 1px solid red;width: 500px" id="apercu">
-        <img src="image/fichier1.jpeg" id="img1" style="width: 100%">
-        <img src="image/fichier2.jpeg" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
+        <img src="image/fichier1" id="img1" style="width: 100%">
+        <img src="image/fichier2" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
     </div>
     <button id="sauvegarder" style="margin-top: 100px">Télécharger</button>
     <div id="messageResponse">
@@ -82,7 +82,7 @@
         if(jQuery("#largeur").val()>=0 && jQuery("#hauteur").val()>=0){
             setHeight();
             jQuery.post("upload.php",jQuery("#formulaireImg").serialize(), function(data){
-                //jQuery("#apercu").css('width',data+"px");
+                jQuery("#apercu").css('width',data+"px");
                 console.log(data);
             },'json');
         }

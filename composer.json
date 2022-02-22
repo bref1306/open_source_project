@@ -16,7 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4",
+        "php": ">=7.0",
         "gumlet/php-image-resize": "2.0.*"
     }
 }
