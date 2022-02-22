@@ -2,20 +2,29 @@
 
 class Fusion {
     public $extensionAllowed =['jpeg','png','jpg'];
-    public $pathImage = "src/upload/image/";
+    public $pathImage;
+    private $file1;
+    private $file2;
+
+    function __construct(Array $file1, Array $file2, String $path) {
+        $this->file1 = $file1;
+        $this->file2 = $file2;
+        $this->pathImage = $path;
+    }
 
     /**
      * @param file $file1 First file uploaded
      * @param file $file2 Second file uploaded
      */
-    public function uploadFiles($file1, $file2){
-        if(empty($file1) || empty($file2)) {
+    public function uploadFiles(){
+        if(empty($this->$file1) || empty($this->$file2)) {
             $message="fileMissing";
-            header('Location:../index.php?message='.$message.'');
-            exit;
+            // header('Location:../index.php?message='.$message.'');
+            // exit;
+            return $message;
         }
-        $files[] = $_FILES['file1'];
-        $files[]=  $_FILES['file2'];
+        $files[] = $this->$file1;
+        $files[]=  $this->$file2;
 
         for($i=0; $i<sizeof($files) ;$i++){
             $type=explode('/',$files[$i]['type']);
@@ -23,21 +32,19 @@ class Fusion {
      
             if(!in_array($fileExtension[$i],$this->extensionAllowed)){
                 $message=$files[$i]['name'];
-                header('Location:../index.php?message='.$message.'');
-                exit;
-            }
-            else{
-                 /*  Move tempory files to image folder  */
-                 $tmpName=$files[$i]['tmp_name'];
-                 move_uploaded_file($tmpName,$this->pathImage+'fichier'.($i+1).'.'.$fileExtension[$i].'');
+                // header('Location:../index.php?message='.$message.'');
+                // exit;
+                return $message;
+            } else{
+                /*  Move tempory files to image folder  */
+                $tmpName=$files[$i]['tmp_name'];
+                move_uploaded_file($tmpName,$this->pathImage+'fichier'.($i+1).'.'.$fileExtension[$i].'');
             }
         }
         /*redirect to resize image url*/
         if(file_exists('image/fichier1.'.$fileExtension[0].'') && file_exists('image/fichier2.'.$fileExtension[1].'')){
-            header('Location: resize.php');
-            exit;
+            return true;
         } else echo "<h1>Erreur de fichier</h1>";
-        
     }
 
     public function resizeImages(){

@@ -95,6 +95,11 @@
                 }
                 ?>
             </div>
+            <h3>choisir position pour la deuxième image</h3>
+            <label style="display: inline-block; width: 100px">horizontale : </label>
+            <input placeholder="exemple : 100.3" name="posX" style="margin-left: 20px"><br>
+            <label style="display: inline-block;width: 100px">verticale :  </label>
+            <input placeholder="exemple : 100.3" name="posY" style="margin-left: 20px">
             <div class="w-full text-center">
                 <button class="bg-orange-300 hover:bg-violet-600 text-white rounded font-bold py-2 px-4 w-min text-center" type="submit">Confirmer</button>
             </div>
