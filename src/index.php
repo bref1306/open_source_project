@@ -1,4 +1,4 @@
-
+<?php namespace Adbl\MergePictures;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +14,12 @@
     <!-- Srripts JS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
-   
+
 </head>
 <body class="m-0 p-0 w-full h-full bg-stone-200">
     <div class="flex flex-row justify-center items-center p-6 text-2xl bg-white text-black drop-shadow-md">
         <div class="w-48 flex justify-center">
-             <img src="assets/download.png" height="130" width="130">   
+             <img src="assets/download.png" height="130" width="130">
         </div>
         <div>
             <h1 class="font-bold text-2xl text-left">Photoshop Low Cost</h1>
