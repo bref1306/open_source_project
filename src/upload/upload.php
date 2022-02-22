@@ -6,7 +6,7 @@ $message=null;
 // conditionnal, execution save new image
 
 if(isset($_POST["widthPrimary"])) {
-    var_dump($_POST["widthPrimary"]);
+
     $fusion = new Fusion(null, null, "image/");
     $m = $fusion->resizeImages($_POST);
 } else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
