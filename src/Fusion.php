@@ -9,7 +9,7 @@ class Fusion {
     private $file1;
     private $file2;
 
-    function __construct( $file1,  $file2,  $path) {
+    function __construct(?array $file1, ?array $file2, string $path) {
         $this->file1 = $file1;
         $this->file2 = $file2;
         $this->pathImage = $path;
@@ -77,19 +77,25 @@ class Fusion {
             default :
                 $source = imagecreatefromjpg($fileToResize);
         }
+
+        //copy image1
+        list($widthImg1,$heightImg1)=getimagesize("image/fichier1.jpeg");
+        $new_widthImg1 = $param['widthPrimary'];
+        $new_heightImg1 = $param['HeightImgPrimary'];
+
+        $sizeImg1=imagecreatetruecolor($new_widthImg1, $new_heightImg1);
+        imagecopyresampled($sizeImg1,imagecreatefromjpeg("image/fichier1.jpeg"),0,0,0,0,$new_widthImg1,$new_heightImg1,$widthImg1,$heightImg1 );
+        imagejpeg($sizeImg1,"newIm1.jpeg");
+
         // 2 nd image to resize
         list($width, $height) = getimagesize($fileToResize);
         $new_width = $param["widthSecondary"];
         $new_height = $param["HeightImgSecondary"];
 
-        list($widthImg1,$heightImg1)=getimagesize("image/fichier1.jpeg");
-        $new_widthImg1 = $param['widthPrimary'];
-        $new_heightImg1 = $param['HeightImgPrimary'];
+        $sizeImg2=imagecreatetruecolor($new_width,$new_height);/*création taille pour la nouvelle redimension*/
+        imagecopyresampled($sizeImg2,$source, 0, 0, 0, 0,$new_width,$new_height,$width,$height);
+        $image2=imagejpeg($sizeImg2, "copy.jpeg", 100);
 
-
-        $sizeImg1=imagecreatetruecolor($new_widthImg1, $new_heightImg1);
-
-        $imgSize=imagecreatetruecolor($new_width,$new_height);/*création taille pour la nouvelle redimension*/
 
         //création image 2 avec nouvelle dimension
         // imagecopyresampled(
@@ -104,14 +110,8 @@ class Fusion {
         //     int $src_width,
         //     int $src_height
         // ): bool
-        //copy de la premiere image
-        imagecopyresampled($sizeImg1,imagecreatefromjpeg("image/fichier1.jpeg"),0,0,0,0,$new_widthImg1,$new_heightImg1,$widthImg1,$heightImg1 );
-        $newImg1 = imagejpeg($sizeImg1,"newIm1.jpeg");
-
-        imagecopyresampled($imgSize,$source, 0, 0, 0, 0,$new_width,$new_height,$width,$height);
 
 
-        $image2=imagejpeg($imgSize, "copy.jpeg", 100);
 
         //récupération des images 1 et 2
         $image2=imagecreatefromjpeg("copy.jpeg");
@@ -122,13 +122,10 @@ class Fusion {
         $largeur_image2 = imagesx($image2);
         $hauteur_image2 = imagesy($image2);
 
-        $largeur_image1 = imagesx($image1);
-        $hauteur_image1 = imagesy($image1);
 
-        /*ATTENTION il faudra remplacer le 100 et 200 par les positions choisi par l'utilisateur*/
 
-        $destination_x = $largeur_image1 - ($param['posY']+$largeur_image2); //$largeur_image2;//position pour placer la deuxième image en x
-        $destination_y = $hauteur_image1 - ($param['posX']+$hauteur_image2);//$hauteur_image2;//position pour placer la deuxième image en y
+        $destination_x = $param['posX']; //$largeur_image2;//position pour placer la deuxième image en x
+        $destination_y = $param['posY'];//$hauteur_image2;//position pour placer la deuxième image en y
 
         // imagecopymerge(
         //     GdImage $dst_image,
@@ -141,7 +138,7 @@ class Fusion {
         //     int $src_height,
         //     int $pct
         // ): bool
-        imagecopymerge($image1, $image2, $destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
+        imagecopymerge($image1, $image2,$destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
 
 
         imagejpeg($image1, "copyFinal.jpeg", 100);
