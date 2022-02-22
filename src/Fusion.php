@@ -20,14 +20,14 @@ class Fusion {
      * @param file $file2 Second file uploaded
      */
     public function uploadFiles(){
-        if(empty($this->$file1) || empty($this->$file2)) {
+        if(empty($this->file1) || empty($this->file2)) {
             $message="fileMissing";
             // header('Location:../index.php?message='.$message.'');
             // exit;
             return $message;
         }
-        $files[] = $this->$file1;
-        $files[]=  $this->$file2;
+        $files[] = $this->file1;
+        $files[]=  $this->file2;
 
         for($i=0; $i<sizeof($files) ;$i++){
             $type=explode('/',$files[$i]['type']);
@@ -41,13 +41,13 @@ class Fusion {
             } else{
                 /*  Move tempory files to image folder  */
                 $tmpName=$files[$i]['tmp_name'];
-                move_uploaded_file($tmpName,$this->pathImage+'fichier'.($i+1).'.'.$fileExtension[$i].'');
+                move_uploaded_file($tmpName,$this->pathImage.'fichier'.($i+1).'.'.$fileExtension[$i].'');
             }
         }
         /*redirect to resize image url*/
         if(file_exists('image/fichier1.'.$fileExtension[0].'') && file_exists('image/fichier2.'.$fileExtension[1].'')){
             return true;
-        } else echo "<h1>Erreur de fichier</h1>";
+        } else return "Erreur de fichier</h1>";
     }
     /**
      * 
