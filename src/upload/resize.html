@@ -1,19 +1,51 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Redimensioner mon image</title>
 </head>
-<body>
+<body class="m-0 p-0 w-full h-full bg-stone-200">
+    <div class="flex flex-row justify-center items-center p-6 text-2xl bg-white text-black drop-shadow-md">
+        <div class="w-48 flex justify-center">
+             <img src="../assets/download.png" height="130" width="130">
+        </div>
+        <div>
+            <h1 class="font-bold text-2xl text-left">Photoshop Low Cost</h1>
+            <p class="text-left">Paramétrez vos images</p>
+        </div>
+    </div>
+
+    <div class="p-18">
+        <form id="formulaireImg">
+            <div>
+                <label>Largueur image principale</label>
+                <input id="image1" value="500" class="appearance-none block w-full text-gray-700 border rounded " name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
+                <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
+                <label>Largueur image à superposer</label>
+                <input id="image2" value="50" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
+                <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
+            </div>
+    
+            <div style="margin-top: 50px">
+                <h2>Position 2e image à superposer</h2>
+                <label>positionX</label>
+                <input type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0"><br>
+                <label>positionY</label>
+                <input type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
+            </div>
+        </form>
+    </div>
 <div style="float: left;width: 400px">
+    
     <form id="formulaireImg">
         <div>
             <label>Largueur image principale</label>
-            <input id="image1" value="500" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
+            <input id="image1" value="500" class="appearance-none block w-full text-gray-700 border rounded " name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
             <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
             <label>Largueur image à superposer</label>
             <input id="image2" value="50" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
