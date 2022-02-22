@@ -41,13 +41,13 @@ class Fusion {
             } else{
                 /*  Move tempory files to image folder  */
                 $tmpName=$files[$i]['tmp_name'];
-                move_uploaded_file($tmpName,$this->pathImage+'fichier'.($i+1).'.'.$fileExtension[$i].'');
+                move_uploaded_file($tmpName,$this->pathImage.'fichier'.($i+1).'.'.$fileExtension[$i].'');
             }
         }
         /*redirect to resize image url*/
         if(file_exists('image/fichier1.'.$fileExtension[0].'') && file_exists('image/fichier2.'.$fileExtension[1].'')){
             return true;
-        } else echo "<h1>Erreur de fichier</h1>";
+        } else return "Erreur de fichier</h1>";
     }
     /**
      * 
