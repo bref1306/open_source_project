@@ -75,7 +75,7 @@ class Fusion {
             break;
         
             default :
-                $source = imagecreatefromjpg($fileToResize);
+                $source = imagecreatefromjpeg($fileToResize);
         }
         
         list($width, $height) = getimagesize($fileToResize);
