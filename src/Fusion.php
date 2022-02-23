@@ -49,51 +49,69 @@ class Fusion {
             return true;
         } else return "Erreur de fichier</h1>";
     }
+
+    /**
+     * @param  $filename without the extension
+     */
+    public function createCopyImage($fileName){
+
+        $files=scandir('image/');
+        $filePath=null;
+        $image=null;
+        foreach ($files as $file){
+            if($file !="." && $file !=".."){
+                $fileToResize="image/".$file;
+                $fileExtension=explode('.',$fileToResize);
+
+                if($fileExtension[0]==$this->pathImage.$fileName){
+                    $fileExtension=$fileExtension[1];
+                    switch ($fileExtension){
+                        case $fileExtension=="jpeg":
+                            $image = imagecreatefromjpeg($fileToResize);
+                            $filePath=$fileToResize;
+
+                            break;
+
+                        case $fileExtension=="png":
+                            $image = imagecreatefrompng($fileToResize);
+                            $filePath=$fileToResize;
+                            break;
+
+                        default :
+                            $image = imagecreatefromjpg($fileToResize);
+                            $filePath=$fileToResize;
+                    }
+                }
+            }
+        }
+
+        return ['path'=>$filePath,'ressource'=>$image];
+    }
+
     /**
      * @param array $param Datas send by post method
      */
     public function resizeImages(array $param){
-        $files=scandir('image/');
-        $fileToResize=null;
-        $fileExtension = null;
-        foreach ($files as $file){
-            if($file !="." || $file !=".."){
-                $fileToResize="image/".$file;
-            }
-        }
-        $fileExtension=explode('.',$fileToResize);
-        $fileExtension=$fileExtension[1];
-        $source=null;
 
-        switch ($fileExtension){
-            case $fileExtension=="jpeg":
-                $source = imagecreatefromjpeg($fileToResize);
-            break;
-
-            case $fileExtension=="png":
-                $source = imagecreatefrompng($fileToResize);
-            break;
-
-            default :
-                $source = imagecreatefromjpg($fileToResize);
-        }
+         $fichier1=$this->createCopyImage("fichier1");
+         $fichier2=$this->createCopyImage("fichier2");
 
         //copy image1
-        list($widthImg1,$heightImg1)=getimagesize("image/fichier1.jpeg");
+        list($widthImg1,$heightImg1)=getimagesize($fichier1['path']);
         $new_widthImg1 = $param['widthPrimary'];
         $new_heightImg1 = $param['HeightImgPrimary'];
 
         $sizeImg1=imagecreatetruecolor($new_widthImg1, $new_heightImg1);
-        imagecopyresampled($sizeImg1,imagecreatefromjpeg("image/fichier1.jpeg"),0,0,0,0,$new_widthImg1,$new_heightImg1,$widthImg1,$heightImg1 );
+        imagecopyresampled($sizeImg1,$fichier1['ressource'],0,0,0,0,$new_widthImg1,$new_heightImg1,$widthImg1,$heightImg1 );
         imagejpeg($sizeImg1,"newIm1.jpeg");
 
         // 2 nd image to resize
-        list($width, $height) = getimagesize($fileToResize);
+        list($width, $height) = getimagesize($fichier2['path']);
         $new_width = $param["widthSecondary"];
         $new_height = $param["HeightImgSecondary"];
 
         $sizeImg2=imagecreatetruecolor($new_width,$new_height);/*création taille pour la nouvelle redimension*/
-        imagecopyresampled($sizeImg2,$source, 0, 0, 0, 0,$new_width,$new_height,$width,$height);
+        imagecopyresampled($sizeImg2,$fichier2['ressource'], 0, 0, 0, 0,$new_width,$new_height,$width,$height);
         $image2=imagejpeg($sizeImg2, "copy.jpeg", 100);
 
 
