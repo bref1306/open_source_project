@@ -2,7 +2,7 @@
     "name": "adbl/merge-pictures",
     "description": "Upload 2 pictures and merge them into one",
     "type": "library",
-    "license": "MIT license",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Adbl\\MergePictures\\": "src/"
