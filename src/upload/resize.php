@@ -138,17 +138,18 @@
 
         if(jQuery("#largeur").val()>=0 && jQuery("#hauteur").val()>=0){
             setHeight();
-            jQuery.post("upload.php", jQuery("#formulaireImg").serialize(), function(data){
-
+            $.ajax({
+                type:'POST',
+                url:"upload.php",
+                async:false,
+                data:jQuery("#formulaireImg").serialize(),
             })
             .done(function(data) {
-                //console.log(data)
                 linkDl.elemnt.setAttribute("href",data);
                 linkDl.ready=true;
+                if(linkDl.ready===true) linkDl.elemnt.click();
 
                 //setTimeout(function () { window.location = data; }, 100)
-                //buffer
-                setTimeout(()=>{}, 1000)
 
             })
             .fail(function(data) {
@@ -157,10 +158,11 @@
         }
         else{
         }
-
-        if(linkDl.ready===true) linkDl.elemnt.click();
+        setTimeout(()=>{}, );
+        startDl();
 
     })
+
 </script>
 <script>
     function setPosImgSecondary() {
