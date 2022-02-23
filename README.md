@@ -4,7 +4,7 @@ Ce projet Composer permet de fusionner deux images en une !
 
 ## Documentation
 
-1. si ce n'est pas déjà fait installer composer :
+1. Si ce n'est pas déjà fait installer composer :
 ````php 
 composer install 
 ````
@@ -19,7 +19,7 @@ composer update
 
 2. 
 ````bash 
-composer create-project adbl/merge-pictures
+composer create-project adbl/merge-pictures:dev-main
 ````
 
 3. Ensuite vous pouvez télécharger vos deux images et cliquez ensuite sur "Confirmez"
