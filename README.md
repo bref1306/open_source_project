@@ -19,7 +19,7 @@ composer update
 
 2. 
 ````bash 
-composer require adbl/merge-pictures
+composer create-project adbl/merge-pictures
 ````
 
 3. Ensuite vous pouvez télécharger vos deux images et cliquez ensuite sur "Confirmez"
