@@ -52,6 +52,7 @@ class Fusion {
 
     /**
      * @param  $filename without the extension
+     * return an array
      */
     public function createCopyImage($fileName){
 
