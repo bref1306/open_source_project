@@ -110,19 +110,13 @@ class Fusion {
         //     int $src_width,
         //     int $src_height
         // ): bool
-
-
-
         //récupération des images 1 et 2
         $image2=imagecreatefromjpeg("copy.jpeg");
         $image1 = imagecreatefromjpeg("newIm1.jpeg");
 
         //calcul des hauteurs et largueurs des images1 et 2
-
         $largeur_image2 = imagesx($image2);
         $hauteur_image2 = imagesy($image2);
-
-
 
         $destination_x = $param['posX']; //$largeur_image2;//position pour placer la deuxième image en x
         $destination_y = $param['posY'];//$hauteur_image2;//position pour placer la deuxième image en y
@@ -140,8 +134,8 @@ class Fusion {
         // ): bool
         imagecopymerge($image1, $image2,$destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
 
-
         imagejpeg($image1, "copyFinal.jpeg", 100);
+        return true;
     }
 
 }
