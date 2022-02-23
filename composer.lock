@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1056fd962f14c1a9f76801194ef43d76",
+    "content-hash": "5f87c7776c96e1d89e7e5371b19a9ebf",
     "packages": [
         {
             "name": "gumlet/php-image-resize",

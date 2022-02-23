@@ -19,6 +19,13 @@
         "php": ">=7.1",
         "gumlet/php-image-resize": "2.0.*"
     },
+    "repositories": [
+        {
+           "type": "git",
+           "url": "https://github.com/bref1306/open_source_project.git",
+           "reference": "main"
+        }
+    ],
     "extra": {
         "branch-alias": {
             "main": "1.0.x-dev"
