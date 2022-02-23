@@ -78,7 +78,7 @@ class Fusion {
                             break;
 
                         default :
-                            $image = imagecreatefromjpg($fileToResize);
+                            $image = imagecreatefromjpeg($fileToResize);
                             $filePath=$fileToResize;
                     }
                 }

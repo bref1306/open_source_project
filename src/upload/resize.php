@@ -10,35 +10,38 @@
     <title>Redimensioner mon image</title>
 </head>
 <body class="m-0 p-0 w-full h-full bg-stone-200">
-<div class="flex flex-row justify-center items-center p-6 text-2xl bg-white text-black drop-shadow-md">
-    <div class="w-48 flex justify-center">
-        <img src="../assets/download.png" height="130" width="130">
-    </div>
-    <div>
-        <h1 class="font-bold text-2xl text-left">Photoshop Low Cost</h1>
-        <p class="text-left">Paramétrez vos images</p>
-    </div>
-</div>
+<?php include('../components/header.php')?>
 <div class="p-10">
-    <div class="flex flex-col md:flex-row space-x-16">
-        <div class="w-1/2 flex justify-center items-center">
-            <div class="relative" id="apercu">
-                <?php require '../Fusion.php'; ?>
-                <img src="<?php echo Fusion::getPathFile("fichier1")?>" id="img1" style="width: 100%">
-                <img src="<?php echo Fusion::getPathFile("fichier2")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
-            </div>
-            <div id="messageResponse"></div>
-        </div>
-        <div class="w-1/2 space-y-2">
-            <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center content-center align-middle">
-                <div class="rounded-full bg-white p-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                    </svg>
+    <div class="flex flex-col-reverse md:flex-row md:space-x-16">
+        <div class="flex w-full justify-center items-center md:w-1/2 md:mb-0 bg-white px-2 pb-2 rounded-xl mt-6">
+            <div class="flex h-full flex-col justify-between items-center my-6">
+                <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center">
+                    <div class="rounded-full bg-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-lg">Rendu en direct</p>
                 </div>
-                <p class="font-semibold text-lg">Taille des images</p>
+                <div class="relative" id="apercu">
+                    <?php require '../Fusion.php'; ?>
+                    <img src="<?php echo Fusion::getPathFile("fichier1")?>" id="img1" style="width: 100%">
+                    <img src="<?php echo Fusion::getPathFile("fichier2")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
+                </div>
+                <div id="messageResponse"></div>
             </div>
+        </div>
+        <div class="md:w-1/2 flex flex-col justify-center items-center">
             <form id="formulaireImg">
+                <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center content-center align-middle">
+                    <div class="rounded-full bg-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <p class="font-semibold text-lg">Taille des images</p>
+                </div>
                 <div class="flex flex-row w-full space-x-16">
                     <div clas="flex flex-col">
                         <div class="mb-2">Image n°1</div>
@@ -51,7 +54,7 @@
                         <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
                     </div>
                 </div>
-                <hr class="h-0.5 bg-gray-300 rounded-xl my-2">
+                <hr class="h-0.5 bg-gray-300 rounded-xl my-2 w-full">
                 <div class="space-y-4 mb-6" >
                     <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center content-center align-middle">
                         <div class="rounded-full bg-white p-2">
