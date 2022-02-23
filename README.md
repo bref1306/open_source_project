@@ -1,17 +1,20 @@
 # open_source_project
-
 ## Utilisation
-Cette librairie premet de fusionner deux images en une.
+Ce projet Composer permet de fusionner deux images en une !
 
-## Installation
+## Documentation
 
-1. Pour installer composer :
+1. si ce n'est pas déjà fait installer composer :
 ````php 
 composer install 
 ````
 Pour installer et mettre à jour les dépendances :
 ````php 
 php composer.phar update
+````
+ou 
+````php 
+composer update
 ````
 
 2. Se situer dans le dossier /src
@@ -26,12 +29,15 @@ php composer.phar update
 
 ## Gouvernance
 Notre mode de gouvernance est de type communautaire. C'est notre communauté qui gère l'évolution de cette librairie ! 
-
+Chaque personne qui veule proposer une évolution sont des contributeurs à part entière.
 ## Rôles
 Les principaux mainteneurs de ce projet sont :
-Luc LE COUTOUR, Damien IHAURADO, Auriane et Badis.
+    - Luc LE COUTOUR : gère la partie back et les conflits
+    - Damien IHAURADO : gère la partie back-end et le traitement des images
+    - Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end 
+    - Badis KHACHAA : s'occupe de la partie front-end 
 
-Le committer est Luc.
+Le committer : Luc LECONTOUR se charge de la validation des éventuels évolutions.
 
 ## License 
 Librairie sous MIT licence.
