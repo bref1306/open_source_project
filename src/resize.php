@@ -127,10 +127,10 @@
                 console.log(data);
             })
             .done(function(data) {
-                setTimeout(function () { window.location = data; }, 100)
+                //setTimeout(function () { window.location = data; }, 100)
             })  
             .fail(function(data) {
-                $("#link_DL").html("GROSSE ERREUR T TRO NUL LOL")
+                $("#link_DL").html("Erreur")
             })
         }
         else{

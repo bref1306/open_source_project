@@ -4,11 +4,12 @@ include "../vendor/Fusion/Fusion.php";
 // load autoload from vendor 
 $message=null;
 if(isset($_POST["widthPrimary"])) {
-    $fusion = new Fusion(null, null, dirname(__FILE__)."image/");
+    $fusion = new Fusion(null, null, dirname(__FILE__)."/image/");
     $m = $fusion->resizeImages($_POST);
     if($m !== false) {
         $r = json_encode(dirname(__FILE__).$m);
         $r = str_replace('\\\\', "/", $r);
+
         echo $r;
         exit;
     } else echo json_encode($m);
