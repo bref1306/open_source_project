@@ -1,11 +1,10 @@
-<?php namespace Adbl\MergePictures;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photoshop du pauvre</title>
+    <title>Titre d'un user lambda</title>
 
     <!-- Scripts CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,20 +13,12 @@
     <!-- Srripts JS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
-
 </head>
+<!-- ../vendor/photoshop/assets/download.png -->
 <body class="m-0 p-0 w-full h-full bg-stone-200">
-    <div class="flex flex-row justify-center items-center p-6 text-2xl bg-white text-black drop-shadow-md">
-        <div class="w-48 flex justify-center">
-             <img src="assets/download.png" height="130" width="130">
-        </div>
-        <div>
-            <h1 class="font-bold text-2xl text-left">Photoshop Low Cost</h1>
-            <p class="text-left">Télécharger vos deux photos pour les fusionner en une !</p>
-        </div>
-    </div>
     <?php $upload_svg = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>'; ?>
-    <form action="upload/upload.php" method="post" class="m-10" enctype="multipart/form-data">
+
+    <form action="upload.php" method="post" class="m-10" enctype="multipart/form-data">
         <div class="flex flex-col justify-center space-y-10">
             <div class="flex flex-row justify-center space-x-24">
                 <div class="flex flex-col">
@@ -42,7 +33,7 @@
                             reader.readAsDataURL($refs.photo.files[0]);
                         ">
                         <div class="mt-2" x-show="! photoPreview">
-                            <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
+                            <img src="../vendor/photoshop/assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
                         </div>
                         <div class="mt-2" x-show="photoPreview" style="display: none;">
                             <span class="block w-40 h-40 rounded-full m-auto shadow" x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
@@ -69,7 +60,7 @@
                             reader.readAsDataURL($refs.photo.files[0]);
                         ">
                         <div class="mt-2" x-show="! photoPreview">
-                            <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
+                            <img src="../vendor/photoshop/assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
                         </div>
                         <div class="mt-2" x-show="photoPreview" style="display: none;">
                             <span class="block w-40 h-40 rounded-full m-auto shadow" x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
@@ -104,5 +95,11 @@
             </div>
         </div>
     </form>
+    <style>
+        .button {
+            transition-timing-function: ease;
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+    </style>
 </body>
 </html>

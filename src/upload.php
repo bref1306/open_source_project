@@ -1,30 +1,22 @@
-
 <?php
-include "../Fusion.php";
-
+include "../vendor/autoload.php";
+include "../vendor/Fusion/Fusion.php";
+// load autoload from vendor 
 $message=null;
-// conditionnal, execution save new image
 if(isset($_POST["widthPrimary"])) {
-    $fusion = new Fusion(null, null, "image/");
+    $fusion = new Fusion(null, null, dirname(__FILE__)."image/");
     $m = $fusion->resizeImages($_POST);
     if($m !== false) {
         $r = json_encode(dirname(__FILE__).$m);
         $r = str_replace('\\\\', "/", $r);
-        $p = "image/copyFinal.jpeg";
-        echo $p;
+        echo $r;
         exit;
-    } else {
-        echo json_encode("MDR T NUL LOL");
-    }
+    } else echo json_encode($m);
 } else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
-    /*remove all files before creating*/
-    $directory = scandir(__DIR__.'/image/');
-    foreach ($directory as $file){
-        if($file!="." && $file!=".."){
-            unlink(__DIR__."/image/".$file);
-        }
-    }
-    $fusion = new Fusion($_FILES['file1'], $_FILES['file2'], "image/");
+    // GIVE ABSOLUTE PATH 
+    $p = dirname(__FILE__)."/image/";
+    //die($p);
+    $fusion = new Fusion($_FILES['file1'], $_FILES['file2'],$p);
     $m = $fusion->uploadFiles();
     if ($m != true) header('Location:../index.php?message='.$m.'');
     else header('Location: resize.php');

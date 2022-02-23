@@ -10,7 +10,6 @@
     <title>Redimensioner mon image</title>
 </head>
 <body class="m-0 p-0 w-full h-full bg-stone-200">
-<?php include('../components/header.php')?>
 <div class="p-10">
     <div class="flex flex-col-reverse md:flex-row md:space-x-16">
         <div class="flex w-full justify-center items-center md:w-1/2 md:mb-0 bg-white px-2 pb-2 rounded-xl mt-6">
@@ -25,9 +24,9 @@
                     <p class="font-semibold text-lg">Rendu en direct</p>
                 </div>
                 <div class="relative" id="apercu">
-                    <?php require '../Fusion.php'; ?>
-                    <img src="<?php echo Fusion::getPathFile("fichier1")?>" id="img1" style="width: 100%">
-                    <img src="<?php echo Fusion::getPathFile("fichier2")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
+                    <?php require '../vendor/Fusion/Fusion.php'; ?>
+                    <img src="<?php echo Fusion::getPathFile("fichier1", "/image")?>" id="img1" style="width: 100%">
+                    <img src="<?php echo Fusion::getPathFile("fichier2", "/image")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
                 </div>
                 <div id="messageResponse"></div>
             </div>
@@ -128,12 +127,6 @@
                 console.log(data);
             })
             .done(function(data) {
-                let p = '<a download='+data+' href='+data+' title="ImageName">'
-                    p += '<img alt="ImageName" src='+data+'>'
-                    p += '</a>'            
-
-                //$("#link_DL").html(p)
-                console.log(data);
                 setTimeout(function () { window.location = data; }, 100)
             })  
             .fail(function(data) {

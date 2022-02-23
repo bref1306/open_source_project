@@ -44,7 +44,9 @@ Librairie sous MIT licence.
 
 ## Utilisation sous forme de package
 
-1) Copier/coller les formulaires présent dans les fichiers d'exemple 
+1) En premier lieu il est necessaire de mettre en place les formulaires d'utilisation
+
+2) 
 
 
 
