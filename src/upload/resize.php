@@ -110,7 +110,7 @@
         //TODO controle si image bien positionné et non en dehors du cadre
         if(jQuery("#largeur").val()>=0 && jQuery("#hauteur").val()>=0){
             setHeight();
-            jQuery.post("createImage.php",jQuery("#formulaireImg").serialize(), function(data){
+            jQuery.post("upload.php",jQuery("#formulaireImg").serialize(), function(data){
                 //jQuery("#apercu").css('width',data+"px");
                 console.log(data);
             },'json');
