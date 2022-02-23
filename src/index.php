@@ -16,22 +16,23 @@
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
 
 </head>
-<body class="m-0 p-0 w-full h-full bg-stone-200">
+<body class="m-0 p-0 w-full  h-full bg-stone-200">
     <div class="flex flex-row justify-center items-center p-6 text-2xl bg-white text-black drop-shadow-md">
         <div class="w-48 flex justify-center">
              <img src="assets/download.png" height="130" width="130">
         </div>
         <div>
-            <h1 class="font-bold text-2xl text-left">Photoshop Low Cost</h1>
-            <p class="text-left">Télécharger vos deux photos pour les fusionner en une !</p>
+            <h1 class="font-bold text-lg md:text-2xl text-left">Photoshop Low Cost</h1>
+            <p class="text-left text-base md:text-lg">Télécharger vos deux photos pour les fusionner en une !</p>
         </div>
     </div>
     <?php $upload_svg = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>'; ?>
-    <form action="upload/upload.php" method="post" class="m-10" enctype="multipart/form-data">
+    <div class="p-10">
+    <form class="flex flex-col-reverse md:flex-row md:space-x-16" style="justify-content:center;" action="upload/upload.php" method="post"  enctype="multipart/form-data">
         <div class="flex flex-col justify-center space-y-10">
-            <div class="flex flex-row justify-center space-x-24">
+            <div class="flex flex-col-reverse md:flex-row md:space-x-16">
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col items-center space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input  name="file1" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
@@ -58,7 +59,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 items-center col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input name="file2" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
@@ -68,10 +69,10 @@
                             };
                             reader.readAsDataURL($refs.photo.files[0]);
                         ">
-                        <div class="mt-2" x-show="! photoPreview">
+                        <div class="mt-2 md:shrink-0" x-show="! photoPreview">
                             <img src="assets/no-file.jpg" class="w-40 h-40 m-auto rounded-full shadow">
                         </div>
-                        <div class="mt-2" x-show="photoPreview" style="display: none;">
+                        <div class="mt-2 md:shrink-0" x-show="photoPreview" style="display: none;">
                             <span class="block w-40 h-40 rounded-full m-auto shadow" x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
                             </span>
                         </div>

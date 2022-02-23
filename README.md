@@ -4,7 +4,7 @@ Ce projet Composer permet de fusionner deux images en une !
 
 ## Documentation
 
-1. si ce n'est pas déjà fait installer composer :
+1. Si ce n'est pas déjà fait installer composer :
 ````php 
 composer install 
 ````
@@ -19,7 +19,7 @@ composer update
 
 2. 
 ````bash 
-composer create-project adbl/merge-pictures
+composer create-project adbl/merge-pictures:dev-main
 ````
 
 3. Ensuite vous pouvez télécharger vos deux images et cliquez ensuite sur "Confirmez"
@@ -35,10 +35,10 @@ Notre mode de gouvernance est de type communautaire. C'est notre communauté qui
 Chaque personne qui veule proposer une évolution sont des contributeurs à part entière.
 ## Rôles
 Les principaux mainteneurs de ce projet sont :
-    - Luc LE COUTOUR : gère la partie back et les conflits
-    - Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également
-    - Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end 
-    - Badis KHACHAA : s'occupe de la partie front-end 
+- Luc LE COUTOUR : gère la partie back et les conflits
+- Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également
+- Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end (+ Alpine JS)
+- Badis KHACHAA : s'occupe de la partie front-end et du responsive design
 
 Le committer : Luc LECONTOUR se charge de la validation des éventuels évolutions.
 
