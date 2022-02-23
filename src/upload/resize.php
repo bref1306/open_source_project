@@ -24,8 +24,8 @@
         <div class="w-1/2">
             <div class="relative" id="apercu">
                 <?php require '../Fusion.php'; ?>
-                <img src="<?php echo Fusion::getPathFile("fichier")?>" id="img1" style="width: 100%">
-                <img src="<?php echo Fusion::getPathFile("fichier")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
+                <img src="<?php echo Fusion::getPathFile("fichier1")?>" id="img1" style="width: 100%">
+                <img src="<?php echo Fusion::getPathFile("fichier2")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
             </div>
             <div id="messageResponse"></div>
         </div>
@@ -41,18 +41,18 @@
             <form id="formulaireImg">
                 <div class="flex flex-row w-full space-x-16">
                     <div clas="flex flex-col">
-                        <label class="mb-8">Largueur image n°1</label>
+                        <div class="mb-2">Image n°1</div>
                         <input id="image1" value="500" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
                         <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
                     </div>
                     <div clas="flex felx-col">
-                        <label class="mb-8">Largueur image n°2</label><br>
+                        <div class="mb-2">Image n°2</div>
                         <input id="image2" value="50" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
                         <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
                     </div>
                 </div>
                 <hr class="h-0.5 bg-gray-300 rounded-xl my-2">
-                <div class="space-y-4">
+                <div class="space-y-4 mb-6" >
                     <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center content-center align-middle">
                         <div class="rounded-full bg-white p-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,18 +63,23 @@
                     </div>
                     <div class="flex flex-row space-x-16">
                         <div>
-                            <label class="mb-8">Position X</label>
+                            <div class="mb-2">Position X</div>
                             <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                         <div>
-                            <label class="mb-8">Position Y</label>
+                            <div class="mb-2">Position Y</div>
                             <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                     </div>
                 </div>
             </form>
 
-            <button id="sauvegarder" class="bg-black hover:bg-red-700 text-white text-sm px-4 py-2 border rounded-full">Télécharger</button>
+            <button id="sauvegarder" class="flex flex-row space-x-2 bg-black hover:bg-red-700 text-white text-sm px-4 py-2 border rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>    
+                <p>Télécharger</p>
+            </button>
         </div>
     </div>
 </div>
@@ -88,9 +93,13 @@
     }
     //display primary image width  onchange
     function setPosImg(value){
-        if(value>0){
+        if(value > 0){
             jQuery('#img1').css('width',value);
             jQuery('#apercu').css('width',value);
+        } 
+        if(value > 800) {
+            jQuery('#img1').css('width', 600);
+            jQuery('#apercu').css('width', 600);
         }
         else{
             jQuery('#image1').val(document.getElementById("img1").clientWidth);
