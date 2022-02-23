@@ -143,7 +143,7 @@
             })
             .done(function(data) {
                 //console.log(data)
-                linkDl.elemnt.setAttribute("href","http://localhost/WEB_MDS/open_source_project/src/upload/image/copyFinal.jpeg");
+                linkDl.elemnt.setAttribute("href",data);
                 linkDl.ready=true;
 
                 //setTimeout(function () { window.location = data; }, 100)
