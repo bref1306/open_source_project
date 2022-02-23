@@ -1,5 +1,4 @@
 <?php
-varu_dump("WESH ?");
 if(isset($_POST['widthPrimary'])){
 
 }
