@@ -16,8 +16,6 @@ if(isset($_POST["widthPrimary"])) {
     } else {
         echo json_encode("MDR T NUL LOL");
     }
-   
-    
 } else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     /*remove all files before creating*/
     $directory = scandir(__DIR__.'/image/');

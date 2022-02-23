@@ -1,7 +1,6 @@
 <?php
 /**
  *
- *
  */
 class Fusion {
     public $extensionAllowed =['jpeg','png','jpg'];
@@ -9,16 +8,16 @@ class Fusion {
     private $file1;
     private $file2;
 
+    /**
+     * @param file $file1 First file uploaded
+     * @param file $file2 Second file uploaded
+     */
     function __construct(?array $file1, ?array $file2, string $path) {
         $this->file1 = $file1;
         $this->file2 = $file2;
         $this->pathImage = $path;
     }
 
-    /**
-     * @param file $file1 First file uploaded
-     * @param file $file2 Second file uploaded
-     */
     public function uploadFiles(){
         if(empty($this->file1) || empty($this->file2)) {
             $message="fileMissing";
@@ -47,7 +46,7 @@ class Fusion {
         /*redirect to resize image url*/
         if(file_exists('image/fichier1.'.$fileExtension[0].'') && file_exists('image/fichier2.'.$fileExtension[1].'')){
             return true;
-        } else return "Erreur de fichier</h1>";
+        } else return "Erreur de fichier";
     }
 
     /**
@@ -87,6 +86,22 @@ class Fusion {
         }
 
         return ['path'=>$filePath,'ressource'=>$image];
+    }
+
+    public static function getPathFile($fileName){
+        $filePath=null;
+        $files=scandir('image/');
+        foreach ($files as $file){
+            if($file !="." && $file !=".."){
+                $fileToResize="image/".$file;
+                $fileExtension=explode('.',$fileToResize);
+
+                if($fileExtension[0]=="image/".$fileName){
+                    $filePath= $fileToResize;
+                }
+            }
+        }
+        return $filePath;
     }
 
     /**
