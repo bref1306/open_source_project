@@ -1,4 +1,4 @@
-<script src="https://cdn.tailwindcss.com"></script>
+
 <?php
 include "../Fusion.php";
 
@@ -8,8 +8,11 @@ if(isset($_POST["widthPrimary"])) {
     $fusion = new Fusion(null, null, "image/");
     $m = $fusion->resizeImages($_POST);
     if($m !== false) {
-        $v = dirname(__FILE__).$m;
-        echo json_encode($v);
+        $r = json_encode(dirname(__FILE__).$m);
+        $r = str_replace('\\\\', "/", $r);
+        $p = "image/copyFinal.jpeg";
+        echo $p;
+        exit;
     } else {
         echo json_encode("MDR T NUL LOL");
     }

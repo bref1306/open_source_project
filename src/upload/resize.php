@@ -79,6 +79,8 @@
             </form>
 
             <button id="sauvegarder" class="bg-black hover:bg-red-700 text-white text-sm px-4 py-2 border rounded-full">Télécharger</button>
+
+            <div id="link_DL"></div>
         </div>
     </div>
 </div>
@@ -114,10 +116,22 @@
         //TODO controle si image bien positionné et non en dehors du cadre
         if(jQuery("#largeur").val()>=0 && jQuery("#hauteur").val()>=0){
             setHeight();
-            jQuery.post("upload.php",jQuery("#formulaireImg").serialize(), function(data){
+            jQuery.post("upload.php", jQuery("#formulaireImg").serialize(), function(data){
                 //jQuery("#apercu").css('width',data+"px");
-                console.log(data.response);
-            },'json');
+                console.log(data);
+            })
+            .done(function(data) {
+                let p = '<a download="'+data+'" href="'+data+'" title="ImageName">'
+                    p += '<img alt="ImageName" src="'+data+'">'
+                    p += '</a>'            
+
+                $("#link_DL").html("Lien de votre image : "+data)
+                $("#link_DL").html(p)
+                console.log(data);
+            })  
+            .fail(function(data) {
+                $("#link_DL").html("GROSSE ERREUR T TRO NUL LOL")
+            })
         }
         else{
         }

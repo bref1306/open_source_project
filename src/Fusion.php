@@ -128,12 +128,7 @@ class Fusion {
 
         imagecopymerge($image1, $image2,$destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
         
-        if(imagejpeg($image1, "image/copyFinal.jpeg", 100)) return "image/copyFinal.jpeg";
+        if(imagejpeg($image1, "image/copyFinal.jpeg", 100)) return "\image\copyFinal.jpeg";
         else return false;
     }
-
-    private function getNewImage(){
-
-    }
-
 }
