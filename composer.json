@@ -21,7 +21,7 @@
     },
     "repositories": [
         {
-           "type": "git",
+           "type": "composer",
            "url": "https://github.com/bref1306/open_source_project.git",
            "reference": "main"
         }
