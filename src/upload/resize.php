@@ -21,7 +21,7 @@
 </div>
 <div class="p-10">
     <div class="flex flex-col md:flex-row space-x-16">
-        <div class="w-1/2">
+        <div class="w-1/2 flex justify-center items-center">
             <div class="relative" id="apercu">
                 <?php require '../Fusion.php'; ?>
                 <img src="<?php echo Fusion::getPathFile("fichier1")?>" id="img1" style="width: 100%">
@@ -97,7 +97,7 @@
             jQuery('#img1').css('width',value);
             jQuery('#apercu').css('width',value);
         } 
-        if(value > 900) {
+        if(value > 728) {
             jQuery('#img1').css('width', 600);
             jQuery('#apercu').css('width', 600);
         }
