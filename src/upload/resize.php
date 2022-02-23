@@ -20,7 +20,7 @@
     </div>
 </div>
 <div class="p-10">
-    <div class="flex flex-row space-x-16">
+    <div class="flex flex-col md:flex-row space-x-16">
         <div class="w-1/2">
             <div class="relative" id="apercu">
                 <?php require '../Fusion.php'; ?>
@@ -97,7 +97,7 @@
             jQuery('#img1').css('width',value);
             jQuery('#apercu').css('width',value);
         } 
-        if(value > 800) {
+        if(value > 900) {
             jQuery('#img1').css('width', 600);
             jQuery('#apercu').css('width', 600);
         }
@@ -139,8 +139,8 @@
             if (posY.value == "") {
                 posY.value = 0;
             }
-            jQuery("#img2").css("top", posX.value);
-            jQuery("#img2").css("left", posY.value);
+            jQuery("#img2").css("left", posX.value);
+            jQuery("#img2").css("top", posY.value);
         }
     }
 </script>
