@@ -52,8 +52,9 @@ class Fusion {
 
     /**
      * @param  $filename without the extension
+     * return an array
      */
-    public function createCopyImage($fileName){
+    public function createCopyImage(String $fileName): array{
 
         $files=scandir('image/');
         $filePath=null;
@@ -90,9 +91,9 @@ class Fusion {
 
     /**
      * @param array $param Datas send by post method
+     * return path of the file created, or false
      */
-    public function resizeImages(array $param){
-
+    public function resizeImages(array $param): ?String{
          $fichier1=$this->createCopyImage("fichier1");
          $fichier2=$this->createCopyImage("fichier2");
 
@@ -114,20 +115,6 @@ class Fusion {
         imagecopyresampled($sizeImg2,$fichier2['ressource'], 0, 0, 0, 0,$new_width,$new_height,$width,$height);
         $image2=imagejpeg($sizeImg2, "copy.jpeg", 100);
 
-
-        //création image 2 avec nouvelle dimension
-        // imagecopyresampled(
-        //     GdImage $dst_image,
-        //     GdImage $src_image,
-        //     int $dst_x,
-        //     int $dst_y,
-        //     int $src_x,
-        //     int $src_y,
-        //     int $dst_width,
-        //     int $dst_height,
-        //     int $src_width,
-        //     int $src_height
-        // ): bool
         //récupération des images 1 et 2
         $image2=imagecreatefromjpeg("copy.jpeg");
         $image1 = imagecreatefromjpeg("newIm1.jpeg");
@@ -139,21 +126,14 @@ class Fusion {
         $destination_x = $param['posX']; //$largeur_image2;//position pour placer la deuxième image en x
         $destination_y = $param['posY'];//$hauteur_image2;//position pour placer la deuxième image en y
 
-        // imagecopymerge(
-        //     GdImage $dst_image,
-        //     GdImage $src_image,
-        //     int $dst_x,
-        //     int $dst_y,
-        //     int $src_x,
-        //     int $src_y,
-        //     int $src_width,
-        //     int $src_height,
-        //     int $pct
-        // ): bool
         imagecopymerge($image1, $image2,$destination_x, $destination_y, 0, 0, $largeur_image2, $hauteur_image2, 100);
+        
+        if(imagejpeg($image1, "image/copyFinal.jpeg", 100)) return "image/copyFinal.jpeg";
+        else return false;
+    }
 
-        imagejpeg($image1, "copyFinal.jpeg", 100);
-        return true;
+    private function getNewImage(){
+
     }
 
 }

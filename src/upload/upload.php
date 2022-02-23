@@ -4,11 +4,17 @@ include "../Fusion.php";
 
 $message=null;
 // conditionnal, execution save new image
-
 if(isset($_POST["widthPrimary"])) {
     $fusion = new Fusion(null, null, "image/");
     $m = $fusion->resizeImages($_POST);
-    if($m === true) return json_encode(true);
+    if($m !== false) {
+        $v = dirname(__FILE__).$m;
+        echo json_encode($v);
+    } else {
+        echo json_encode("MDR T NUL LOL");
+    }
+   
+    
 } else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
     /*remove all files before creating*/
     $directory = scandir(__DIR__.'/image/');
