@@ -23,13 +23,9 @@
     <div class="flex flex-row space-x-16">
         <div class="w-1/2">
             <div class="relative" id="apercu">
-                <?php
-                    $files= scandir('image/');
-                    foreach ($files as $ifle){
-                    }
-                ?>
-                <img src="image/fichier1.jpeg" id="img1" style="width: 100%">
-                <img src="image/fichier2.jpeg" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
+                <?php require '../Fusion.php'; ?>
+                <img src="<?php Fusion::getPathFile("fichier")?>" id="img1" style="width: 100%">
+                <img src="<?php Fusion::getPathFile("fichier")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
             </div>
             <div id="messageResponse"></div>
         </div>

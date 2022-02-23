@@ -89,6 +89,22 @@ class Fusion {
         return ['path'=>$filePath,'ressource'=>$image];
     }
 
+    public static function getPathFile($fileName){
+        $filePath=null;
+        $files=scandir('image/');
+        foreach ($files as $file){
+            if($file !="." && $file !=".."){
+                $fileToResize="image/".$file;
+                $fileExtension=explode('.',$fileToResize);
+
+                if($fileExtension[0]=="image/".$fileName){
+                    $filePath= $fileToResize;
+                }
+            }
+        }
+        return $filePath;
+    }
+
     /**
      * @param array $param Datas send by post method
      */
