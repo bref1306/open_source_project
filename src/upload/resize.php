@@ -24,8 +24,8 @@
         <div class="w-1/2">
             <div class="relative" id="apercu">
                 <?php require '../Fusion.php'; ?>
-                <img src="<?php echo Fusion::getPathFile("fichier")?>" id="img1" style="width: 100%">
-                <img src="<?php echo Fusion::getPathFile("fichier")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
+                <img src="<?php echo Fusion::getPathFile("fichier1")?>" id="img1" style="width: 100%">
+                <img src="<?php echo Fusion::getPathFile("fichier2")?>" id="img2" style="width: 50px;position: absolute;top: 0;left:0">
             </div>
             <div id="messageResponse"></div>
         </div>
