@@ -36,7 +36,7 @@ Chaque personne qui veule proposer une évolution sont des contributeurs à part
 ## Rôles
 Les principaux mainteneurs de ce projet sont :
     - Luc LE COUTOUR : gère la partie back et les conflits
-    - Damien IHAURADO : gère la partie back-end et le traitement des images
+    - Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également
     - Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end 
     - Badis KHACHAA : s'occupe de la partie front-end 
 
@@ -44,6 +44,10 @@ Le committer : Luc LECONTOUR se charge de la validation des éventuels évolutio
 
 ## License 
 Librairie sous MIT licence.
+
+## Utilisation sous forme de package
+
+1) Copier/coller les formulaires présent dans les fichiers d'exemple 
 
 
 
