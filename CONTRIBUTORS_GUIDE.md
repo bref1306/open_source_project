@@ -20,7 +20,7 @@ Les propositions de corrections ne doivent en aucun cas être envoyé sur la bra
 
 ## 4. Style de code 
 
-Nous utilisons l'autoloadind standard PSR-4.
+Nous utilisons l'autoloading standard PSR-4.
 
 ## 5. Ergonomie
 
