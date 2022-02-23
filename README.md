@@ -17,7 +17,10 @@ ou
 composer update
 ````
 
-2. Se situer dans le dossier /src
+2. 
+````bash 
+composer require adbl/merge-pictures
+````
 
 3. Ensuite vous pouvez télécharger vos deux images et cliquez ensuite sur "Confirmez"
 
