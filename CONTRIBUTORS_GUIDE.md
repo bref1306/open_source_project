@@ -14,13 +14,13 @@ Nous vous invitons à être clair sur les évolutions et leur pertinence :
 - Enjeu principal de l'évolution
 - Pourquoi la proposer ? 
 
-## 3. Report de bug
+## 3. Report de bugs
 
 Les propositions de corrections ne doivent en aucun cas être envoyé sur la branche *main*.
 
 ## 4. Style de code 
 
-Nous utilisons l'autoloadind standard PSR-4.
+Nous utilisons l'autoloading standard PSR-4.
 
 ## 5. Ergonomie
 

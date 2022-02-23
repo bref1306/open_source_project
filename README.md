@@ -35,10 +35,10 @@ Notre mode de gouvernance est de type communautaire. C'est notre communauté qui
 Chaque personne qui veule proposer une évolution sont des contributeurs à part entière.
 ## Rôles
 Les principaux mainteneurs de ce projet sont :
-    - Luc LE COUTOUR : gère la partie back et les conflits
-    - Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également
-    - Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end 
-    - Badis KHACHAA : s'occupe de la partie front-end 
+- Luc LE COUTOUR : gère la partie back et les conflits
+- Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également
+- Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end (+ Alpine JS)
+- Badis KHACHAA : s'occupe de la partie front-end et du responsive design
 
 Le committer : Luc LECONTOUR se charge de la validation des éventuels évolutions.
 

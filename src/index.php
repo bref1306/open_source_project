@@ -21,9 +21,8 @@
         <div class="w-48 flex justify-center">
              <img src="assets/download.png" height="130" width="130">
         </div>
-        
         <div>
-        <h1 class="font-bold text-lg md:text-2xl text-left">Photoshop Low Cost</h1>
+            <h1 class="font-bold text-lg md:text-2xl text-left">Photoshop Low Cost</h1>
             <p class="text-left text-base md:text-lg">Télécharger vos deux photos pour les fusionner en une !</p>
         </div>
     </div>
@@ -33,7 +32,7 @@
         <div class="flex flex-col justify-center space-y-10">
             <div class="flex flex-col-reverse md:flex-row md:space-x-16">
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col items-center space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input  name="file1" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
@@ -60,7 +59,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                    <div x-data="{photoName: null, photoPreview: null}" class="flex flex-col space-y-4 items-center col-span-6 ml-2 sm:col-span-4 md:mr-3">
                         <!-- Photo File Input -->
                         <input name="file2" type="file" class="hidden" x-ref="photo" x-on:change="
                             photoName = $refs.photo.files[0].name;
