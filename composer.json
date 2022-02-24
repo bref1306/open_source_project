@@ -12,6 +12,15 @@
         {
             "name": "Auriane",
             "email": "auriane@uccelolabs.com"
+        },
+        {
+            "name": "Damien"
+        },
+        {
+            "name": "Luc"
+        },
+        {
+            "name": "Badis"
         }
     ],
     "minimum-stability": "dev",
