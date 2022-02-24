@@ -3,33 +3,20 @@
 ## Use
 This Composer project allows you to merge two images into one!
 
-## Documentation
+## Documentation`
 
-1. If not already installed dial:
-````php
-composer install
-````
-To install and update dependencies:
-````php
-php composer.phar update
-````
-or
-````php
-composer update
-````
-
-2.
+1.  
 ```bash
 composer create-project adbl/merge-pictures:dev-main
 ````
 
-3. Then you can upload your two images and then click on "Confirm"
+2. Then you can upload your two images and then click on "Confirm"
 
-4. Insert data into inputs to:
+3. Insert data into inputs to:
 - Resize your images
 - Position your 2nd image on the parent image
 
-5. And here we go! You can upload your newly merged image.
+4. And here we go! You can upload your newly merged image.
 
 ## Governance
 Our governance is community-based. It is our community that manages the evolution of this bookstore!
