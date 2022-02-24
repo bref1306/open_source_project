@@ -42,15 +42,15 @@
                     </div>
                     <p class="font-semibold text-lg">Taille des images</p>
                 </div>
-                <div class="flex flex-row w-full space-x-16">
+                <div class="flex flex-row w-full justify-between space-x-16">
                     <div clas="flex flex-col">
                         <div class="mb-2">Image n°1</div>
-                        <input id="image1" value="" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
+                        <input id="image1" value="" class="bg-white block w-full h-10 text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
                         <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
                     </div>
-                    <div clas="flex felx-col">
+                    <div clas="flex flex-col">
                         <div class="mb-2">Image n°2</div>
-                        <input id="image2" value="50" class="bg-white block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
+                        <input id="image2" value="50" class="bg-white block w-full h-10 text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
                         <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
                     </div>
                 </div>
@@ -64,16 +64,15 @@
                         </div>
                         <p class="font-semibold text-lg">Position de la 2e image</p>
                     </div>
-                    <div class="flex flex-row space-x-16">
-                        <!--  -->
-                        <div>
+                    <div class="flex flex-row justify-between space-x-16">
+                        <div class="flex flex-col w-full">
                             <div class="mb-2">Position X</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl"
+                            <input class="block bg-white rounded-xl h-8 appearance-none"
                             type="range" min="0" max="" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
-                        <div>
+                        <div class="flex flex-col w-full">
                             <div class="mb-2">Position Y</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl"
+                            <input class="block bg-white rounded-xl h-8 appearance-none"
                             type="range" min="0" max="" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                     </div>
