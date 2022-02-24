@@ -5,7 +5,7 @@ This Composer project allows you to merge two images into one!
 
 ## Documentation`
 
-1.  Installer le projet
+1.  Install the project
 ```bash
 composer create-project adbl/merge-pictures:dev-main
 ````
