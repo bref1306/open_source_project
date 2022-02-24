@@ -114,7 +114,7 @@ $(document).ready(function() {
         if(value > 0){
             jQuery('#img1').css('width',value);
             jQuery('#apercu').css('width',value);
-            //$("#largeur").attr("max", value - $("#image2").attr("value"));
+            $("#largeur").attr("max", value - $("#image2").attr("value"));
             $("#hauteur").attr("max", document.getElementById("img1").clientHeight - document.getElementById("img2").clientHeight);
         }
         else{
@@ -125,7 +125,7 @@ $(document).ready(function() {
     function setPosImgSuperpose(value){
         if(value>0){
             jQuery('#img2').css('width',value);
-            $("#largeur").attr("max", document.getElementById("img1").clientWidth - $("#image2").attr("value"));
+            $("#largeur").attr("max", document.getElementById("img1").clientWidth - value);
             $("#hauteur").attr("max", document.getElementById("img1").clientHeight - document.getElementById("img2").clientHeight);
         }
         else{
