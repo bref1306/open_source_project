@@ -8,15 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Redimensioner mon image</title>
+    <script src="../assets/css/style.css"></script>
+    <style>
+.image::-webkit-scrollbar-track {
+    background: #fff !important;   
+    border-radius: 20px !important;       /* color of the tracking area */
+  }
+.image::-webkit-scrollbar {
+    width: 5px;    
+    height: 5px;           /* width of the entire scrollbar */
+}
+.image::-webkit-scrollbar-thumb {
+    background-color: #9D9B9B;    /* color of the scroll thumb */
+    border-radius: 20px;
+    border: 2px solid #9D9B9B;  /* creates padding around scroll thumb */
+}
+    </style>
 </head>
 <body class="m-0 p-0 w-full h-full bg-stone-200 text-black">
 <?php include('../components/header.php')?>
 <div class="p-10">
     <div class="flex flex-col-reverse md:flex-row md:space-x-16 items-start">
         <div class="flex w-full justify-center items-center md:w-1/2 md:mb-0 bg-white px-2 pb-2 rounded-xl mt-6">
-            <div class="flex h-full flex-col justify-between items-center mb-6">
+            <div class="image flex h-full flex-col justify-between items-center mb-6 overflow-scroll"  style="width: 100%; height: 100%;">
                 <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center">
-                    <div class="rounded-full bg-white p-2">
+                    <div class="rounded-full bg-white p-2 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
