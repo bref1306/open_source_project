@@ -9,6 +9,12 @@ This Composer project allows you to merge two images into one!
 ```bash
 composer create-project adbl/merge-pictures:dev-main
 ````
+Then
+
+```bash
+cd merge-pictures:dev-main
+````
+To continue open your brower and tap : localhost/src.
 
 2. Then you can upload your two images and then click on "Confirm"
 
