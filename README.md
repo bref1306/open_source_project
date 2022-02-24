@@ -14,7 +14,8 @@ Then
 ```bash
 cd merge-pictures
 ````
-To continue open your brower and tap : localhost/src.
+No forget to locate your project in **/www** (Wamp) or **/htdocs** (Xampp)
+To continue open your brower and tap : localhost/src
 
 2. Then you can upload your two images and then click on "Confirm"
 
