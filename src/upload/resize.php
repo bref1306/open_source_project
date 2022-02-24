@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Redimensioner mon image</title>
 </head>
-<body class="m-0 p-0 w-full h-full bg-stone-200">
+<body class="m-0 p-0 w-full h-full bg-stone-200 text-black">
 <?php include('../components/header.php')?>
 <div class="p-10">
     <div class="flex flex-col-reverse md:flex-row md:space-x-16 items-start">
@@ -50,7 +50,7 @@
                     </div>
                     <div clas="flex felx-col">
                         <div class="mb-2">Image n°2</div>
-                        <input id="image2" value="50" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
+                        <input id="image2" value="50" class="bg-white block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
                         <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
                     </div>
                 </div>

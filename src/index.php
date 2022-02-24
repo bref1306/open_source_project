@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
 
 </head>
-<body class="m-0 p-0 w-full  h-full bg-stone-200">
+<body class="m-0 p-0 w-full h-full bg-stone-200">
     <div class="flex flex-row justify-center items-center p-6 text-2xl bg-white text-black drop-shadow-md">
         <div class="w-48 flex justify-center">
              <img src="assets/download.png" height="130" width="130">
@@ -26,7 +26,7 @@
             <p class="text-left text-base md:text-lg">Télécharger vos deux photos pour les fusionner en une !</p>
         </div>
     </div>
-    <?php $upload_svg = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>'; ?>
+    <?php $upload_svg = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>'; ?>
     <div class="p-10">
     <form class="flex flex-col-reverse md:flex-row md:space-x-16" style="justify-content:center;" action="upload/upload.php" method="post"  enctype="multipart/form-data">
         <div class="flex flex-col justify-center space-y-10">
@@ -52,7 +52,7 @@
                         <div class="flex flex-col">
                             <button type="button" class="w-44 flex flex-col items-center p-4 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-red-800" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
-                                <p>Télécharger</p>
+                                <p  class="text-black">Télécharger</p>
                                 <input class="cursor-pointer absolute block py-2 px-4 w-min opacity-0 pin-r pin-t">
                             </button>
                         </div>
@@ -79,14 +79,13 @@
                         <div class="flex flex-col">
                             <button type="button" class="w-44 flex flex-col items-center p-4 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-red-800" x-on:click.prevent="$refs.photo.click()">
                                 <?php echo $upload_svg ?>
-                                <p>Télécharger</p>
+                                <p class="text-black">Télécharger</p>
                                 <input class="cursor-pointer absolute block py-2 px-4 w-min opacity-0 pin-r pin-t">
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="error-msg text-center text-red-700">
                 <?php
                 if(isset($_GET['message'])){
