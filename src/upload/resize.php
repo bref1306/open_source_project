@@ -8,22 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Redimensioner mon image</title>
-    <script src="../assets/css/style.css"></script>
-    <style>
-        .image::-webkit-scrollbar-track {
-            background: #fff !important;   
-            border-radius: 20px !important;       /* color of the tracking area */
-        }
-        .image::-webkit-scrollbar {
-            width: 5px;    
-            height: 5px;           /* width of the entire scrollbar */
-        }
-        .image::-webkit-scrollbar-thumb {
-            background-color: #9D9B9B;    /* color of the scroll thumb */
-            border-radius: 20px;
-            border: 2px solid #9D9B9B;  /* creates padding around scroll thumb */
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="m-0 p-0 w-full h-full bg-stone-200 text-black">
 <?php include('../components/header.php')?>
