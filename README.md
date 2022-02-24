@@ -6,15 +6,15 @@ This Composer project allows you to merge two images into one!
 ## Documentation
 
 1. If not already installed dial:
-``php
+````php
 composer install
 ````
 To install and update dependencies:
-``php
+````php
 php composer.phar update
 ````
 or
-``php
+````php
 composer update
 ````
 
