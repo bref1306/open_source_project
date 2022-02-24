@@ -9,12 +9,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Redimensioner mon image</title>
 </head>
-<body class="m-0 p-0 w-full h-full bg-stone-200">
+<body class="m-0 p-0 w-full h-full bg-stone-200 text-black">
 <?php include('../components/header.php')?>
 <div class="p-10">
-    <div class="flex flex-col-reverse md:flex-row md:space-x-16">
+    <div class="flex flex-col-reverse md:flex-row md:space-x-16 items-start">
         <div class="flex w-full justify-center items-center md:w-1/2 md:mb-0 bg-white px-2 pb-2 rounded-xl mt-6">
-            <div class="flex h-full flex-col justify-between items-center my-6">
+            <div class="flex h-full flex-col justify-between items-center mb-6">
                 <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center">
                     <div class="rounded-full bg-white p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,12 +45,12 @@
                 <div class="flex flex-row w-full space-x-16">
                     <div clas="flex flex-col">
                         <div class="mb-2">Image n°1</div>
-                        <input id="image1" value="500" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
+                        <input id="image1" value="500" class="bg-white block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
                         <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
                     </div>
                     <div clas="flex felx-col">
                         <div class="mb-2">Image n°2</div>
-                        <input id="image2" value="50" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
+                        <input id="image2" value="50" class="bg-white block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
                         <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
                     </div>
                 </div>
@@ -67,11 +67,11 @@
                     <div class="flex flex-row space-x-16">
                         <div>
                             <div class="mb-2">Position X</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
+                            <input class="bg-white block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                         <div>
                             <div class="mb-2">Position Y</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
+                            <input class="bg-white block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                     </div>
                 </div>
@@ -138,17 +138,18 @@
 
         if(jQuery("#largeur").val()>=0 && jQuery("#hauteur").val()>=0){
             setHeight();
-            jQuery.post("upload.php", jQuery("#formulaireImg").serialize(), function(data){
-
+            $.ajax({
+                type:'POST',
+                url:"upload.php",
+                async:false,
+                data:jQuery("#formulaireImg").serialize(),
             })
             .done(function(data) {
-                //console.log(data)
-                linkDl.elemnt.setAttribute("href","http://localhost/WEB_MDS/open_source_project/src/upload/image/copyFinal.jpeg");
+                linkDl.elemnt.setAttribute("href",data);
                 linkDl.ready=true;
+                if(linkDl.ready===true) linkDl.elemnt.click();
 
                 //setTimeout(function () { window.location = data; }, 100)
-                //buffer
-                setTimeout(()=>{}, 1000)
 
             })
             .fail(function(data) {
@@ -157,10 +158,11 @@
         }
         else{
         }
-
-        if(linkDl.ready===true) linkDl.elemnt.click();
+        setTimeout(()=>{}, );
+        startDl();
 
     })
+
 </script>
 <script>
     function setPosImgSecondary() {
