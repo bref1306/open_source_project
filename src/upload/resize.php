@@ -45,7 +45,7 @@
                 <div class="flex flex-row w-full space-x-16">
                     <div clas="flex flex-col">
                         <div class="mb-2">Image n°1</div>
-                        <input id="image1" value="500" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
+                        <input id="image1" value="" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
                         <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
                     </div>
                     <div clas="flex felx-col">
@@ -65,13 +65,16 @@
                         <p class="font-semibold text-lg">Position de la 2e image</p>
                     </div>
                     <div class="flex flex-row space-x-16">
+                        <!--  -->
                         <div>
                             <div class="mb-2">Position X</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
+                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl"
+                            type="range" min="0" max="" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                         <div>
                             <div class="mb-2">Position Y</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
+                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl"
+                            type="range" min="0" max="" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                     </div>
                 </div>
@@ -92,7 +95,11 @@
 </div>
 <script>
 
-
+$(document).ready(function() {
+    $("#image1").attr("value",document.getElementById("img1").clientWidth)
+    $("#largeur").attr("max", document.getElementById("img1").clientWidth - $("#image2").attr("value"));
+    $("#hauteur").attr("max", document.getElementById("img1").clientHeight - document.getElementById("img2").clientHeight);
+});
 
 
     //set input hidden for both images heigth
@@ -107,10 +114,8 @@
         if(value > 0){
             jQuery('#img1').css('width',value);
             jQuery('#apercu').css('width',value);
-        }
-        if(value > 728) {
-            jQuery('#img1').css('width', 600);
-            jQuery('#apercu').css('width', 600);
+            //$("#largeur").attr("max", value - $("#image2").attr("value"));
+            $("#hauteur").attr("max", document.getElementById("img1").clientHeight - document.getElementById("img2").clientHeight);
         }
         else{
             jQuery('#image1').val(document.getElementById("img1").clientWidth);
@@ -120,6 +125,8 @@
     function setPosImgSuperpose(value){
         if(value>0){
             jQuery('#img2').css('width',value);
+            $("#largeur").attr("max", document.getElementById("img1").clientWidth - $("#image2").attr("value"));
+            $("#hauteur").attr("max", document.getElementById("img1").clientHeight - document.getElementById("img2").clientHeight);
         }
         else{
             jQuery('#image2').val(document.getElementById("img2").clientWidth);
@@ -153,7 +160,7 @@
 
             })
             .fail(function(data) {
-                $("#link_DL").html("GROSSE ERREUR T TRO NUL LOL")
+                $("#link_DL").html("Erreur !")
             })
         }
         else{
