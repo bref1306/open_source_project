@@ -1,37 +1,31 @@
-# Guide du contributeur
+# Contributor’s Guide
 
-## 1. Code de conduite
-- Toujours être tolérant
-- Être honnête pour donner un avis critique pertinent
-- Les insultes sont prohibés
+## 1. Code of Conduct
+- Always be tolerant
+- Be honest in providing relevant critical advice
+- Insults are prohibited
 
-## 2. Proposition d'évolutions
+## 2. Proposed evolutions
 
-Tout le monde est invité a proposé d'éventuelles améliorations !
-Pour cela nous privilégions des pull requests au report de bug. 
+Everyone is invited to propose possible improvements!
+For this we prefer pull requests to bug report.
 
-Nous vous invitons à être clair sur les évolutions et leur pertinence : 
-- Enjeu principal de l'évolution
-- Pourquoi la proposer ? 
+We invite you to be clear on the evolutions and their relevance:
+- Main challenge of the evolution
+"Why propose it?"
 
-## 3. Report de bugs
+## 3. Bug reporting
 
-Les propositions de corrections ne doivent en aucun cas être envoyé sur la branche *main*.
+Proposals for corrections should not be sent to the *main* branch under any circumstances.
 
-## 4. Style de code 
+## 4. Code Style
 
-Nous utilisons l'autoloading standard PSR-4.
+We use the standard PSR-4 autoloading.
 
-## 5. Ergonomie
+## 5. Ergonomics
 
-Pour des propositions d'évolutions UI/UX contactez <a mailto="auriane.geai-serie@my-digital-school.org">auriane.geai-serie@my-digital-school.org</a> ou <a mailto="badis.khachaa@my-digital-school.org">badis.khachaa@my-digital-school.org</a>
+For proposals for UI/UX developments contact auriane.geai-serie@my-digital-school.org or badis.khachaa@my-digital-school.org
 
-## 6. Failles de sécurité
+## 6. Security Vulnerabilities
 
-Si vous découvrez une quelconque faille veuillez contacter <a mailto="luc.lecoutour@my-digital-school.org">luc.lecoutour@my-digital-school.org</a> ou <a mailto="damien.lhaurado@my-digital-school.org">damien.lhaurado@my-digital-school.org</a>
-
-
-
-
-
-
+If you discover a flaw, please contact luc.lecoutour@my-digital-school.org or damien.lhaurado@my-digital-school.org
