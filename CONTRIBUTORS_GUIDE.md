@@ -1,6 +1,6 @@
 # Contributor’s Guide
 
-## 1. Code of Conduct
+## 1. Covenant Code of Conduct
 For more details go see <a href="https://github.com/bref1306/open_source_project/blob/main/CODE_OF_CONDUCT.md" target="_blank">CODE_OF_CONDUCT.md</a> inspired by that of React.
 But to sum up :  
 - Always be tolerant
