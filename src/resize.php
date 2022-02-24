@@ -123,10 +123,10 @@
         if(jQuery("#largeur").val()>=0 && jQuery("#hauteur").val()>=0){
             setHeight();
             jQuery.post("upload.php", jQuery("#formulaireImg").serialize(), function(data){
-                //jQuery("#apercu").css('width',data+"px");
-                console.log(data);
+                
             })
             .done(function(data) {
+                console.log(data);
                 //setTimeout(function () { window.location = data; }, 100)
             })  
             .fail(function(data) {

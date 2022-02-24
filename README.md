@@ -33,8 +33,8 @@ Chaque personne qui veule proposer une évolution sont des contributeurs à part
 ## Rôles
 Les principaux mainteneurs de ce projet sont :
     - Luc LE COUTOUR : gère la partie back et les conflits
-    - Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également
-    - Auriane GEAI-SERIE : configuration de l'environnement Composer et s'occupe principalement du front-end 
+    - Damien LHAURADO : gère la partie back-end, le traitement des images ainsi que les conflits également (et à tanté de faire un package utilisable comme une librarie)
+    - Auriane GEAI-SERIE : configuration de l'environnement Composer, s'occupe principalement du front-end et du design
     - Badis KHACHAA : s'occupe de la partie front-end 
 
 Le committer : Luc LECONTOUR se charge de la validation des éventuels évolutions.
@@ -43,10 +43,6 @@ Le committer : Luc LECONTOUR se charge de la validation des éventuels évolutio
 Librairie sous MIT licence.
 
 ## Utilisation sous forme de package
-
-1) En premier lieu il est necessaire de mettre en place les formulaires d'utilisation
-
-2) 
-
+intro)  
 
 

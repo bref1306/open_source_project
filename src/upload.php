@@ -7,10 +7,7 @@ if(isset($_POST["widthPrimary"])) {
     $fusion = new Fusion(null, null, dirname(__FILE__)."/image/");
     $m = $fusion->resizeImages($_POST);
     if($m !== false) {
-        $r = json_encode(dirname(__FILE__).$m);
-        $r = str_replace('\\\\', "/", $r);
-
-        echo $r;
+        echo $m;
         exit;
     } else echo json_encode($m);
 } else if(isset($_FILES['file1']) && isset($_FILES['file2'])){
