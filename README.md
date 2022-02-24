@@ -12,7 +12,7 @@ composer create-project adbl/merge-pictures:dev-main
 Then
 
 ```bash
-cd merge-pictures:dev-main
+cd merge-pictures
 ````
 To continue open your brower and tap : localhost/src.
 
