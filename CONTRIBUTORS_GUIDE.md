@@ -32,3 +32,8 @@ For proposals for UI/UX developments contact <a mailto="auriane.geai-serie@my-di
 ## 6. Security Vulnerabilities
 
 If you discover a flaw, please contact <a mailto="luc.lecoutour@my-digital-school.org">luc.lecoutour@my-digital-school.org</a> or <a mailto="damien.lhaurado@my-digital-school.org">damien.lhaurado@my-digital-school.org</a>
+
+## Liste des contributeurs
+
+- Luc LECONTOUR
+- Auriane GEAI-SERIE
