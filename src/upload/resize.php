@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Redimensioner mon image</title>
 </head>
-<body class="m-0 p-0 w-full h-full bg-stone-200">
+<body class="m-0 p-0 w-full h-full bg-stone-200 text-black">
 <?php include('../components/header.php')?>
 <div class="p-10">
     <div class="flex flex-col-reverse md:flex-row md:space-x-16 items-start">
@@ -45,12 +45,12 @@
                 <div class="flex flex-row w-full space-x-16">
                     <div clas="flex flex-col">
                         <div class="mb-2">Image n°1</div>
-                        <input id="image1" value="500" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
+                        <input id="image1" value="500" class="bg-white block w-full text-gray-700 border p-2 rounded-xl" name="widthPrimary" onchange="setPosImg(this.value)" placeholder="initial : 500px"><br>
                         <input type="hidden" id="HeightImgPrimary" value="0" name="HeightImgPrimary">
                     </div>
                     <div clas="flex felx-col">
                         <div class="mb-2">Image n°2</div>
-                        <input id="image2" value="50" class="appearance-none block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
+                        <input id="image2" value="50" class="bg-white block w-full text-gray-700 border p-2 rounded-xl" name="widthSecondary" onchange="setPosImgSuperpose(this.value)" placeholder="initial : 50px">
                         <input type="hidden" id="HeightImgSecondary" value="0" name="HeightImgSecondary">
                     </div>
                 </div>
@@ -67,11 +67,11 @@
                     <div class="flex flex-row space-x-16">
                         <div>
                             <div class="mb-2">Position X</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
+                            <input class="bg-white block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="largeur" name="posX" value="0" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                         <div>
                             <div class="mb-2">Position Y</div>
-                            <input class="appearance-none block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
+                            <input class="bg-white block w-full text-gray-700 p-2 rounded-xl" type="number" min="0" id="hauteur" value="0" name="posY" onchange="setPosImgSecondary()" placeholder="initial : 0">
                         </div>
                     </div>
                 </div>
