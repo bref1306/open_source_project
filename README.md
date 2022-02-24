@@ -1,3 +1,4 @@
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 # open_source_project
 ## Use
 This Composer project allows you to merge two images into one!
