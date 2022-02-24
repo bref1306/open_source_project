@@ -34,7 +34,3 @@ Go on <a href="https://github.com/bref1306/open_source_project/blob/main/CONTRIB
 ## License
 Library under MIT license.
 
-## Use as a package
-
-1) Copy/paste the forms present in the sample files
-
