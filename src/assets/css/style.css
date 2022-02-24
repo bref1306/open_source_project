@@ -1,6 +1,6 @@
 .image::-webkit-scrollbar-track {
-    background: #fff !important;   
-    border-radius: 20px !important;       /* color of the tracking area */
+    background: #fff !important;   /* color of the tracking area */
+    border-radius: 20px !important;       
 }
 .image::-webkit-scrollbar {
     width: 5px;    
@@ -10,4 +10,8 @@
     background-color: #9D9B9B;    /* color of the scroll thumb */
     border-radius: 20px;
     border: 2px solid #9D9B9B;  /* creates padding around scroll thumb */
+}
+button {
+    transition-timing-function: ease;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
