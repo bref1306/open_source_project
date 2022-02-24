@@ -48,7 +48,7 @@
                 <div id="messageResponse"></div>
             </div>
         </div>
-        <div class="md:w-1/2 flex flex-col justify-center items-center">
+        <div class="w-full md:w-1/2 flex flex-col justify-center items-center">
             <form id="formulaireImg">
                 <div class="flex flex-row rounded-xl space-x-3 p-2 w-max items-center content-center align-middle">
                     <div class="rounded-full bg-white p-2">
